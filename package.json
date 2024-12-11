@@ -21,6 +21,7 @@
 		"bundle": "npm run lint && npm run build && npm run i18n && npm run plugin-zip"
 	},
 	"dependencies": {
+		"@emotion/styled": "^11.14.0",
 		"@wordpress/icons": "^10.13.0",
 		"immer": "^10.1.1"
 	},

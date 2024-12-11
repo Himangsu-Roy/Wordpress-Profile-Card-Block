@@ -1,67 +1,78 @@
-
-import { __ } from '@wordpress/i18n';
+import { __ } from "@wordpress/i18n";
 import {
   __experimentalGrid as Grid,
-  __experimentalText as Text, GradientPicker, FontSizePicker, FocusableIframe, FocalPointPicker, Flex, FlexBlock, FlexItem, __experimentalDimensionControl as DimensionControl, ComboboxControl, __experimentalBoxControl as BoxControl, __experimentalBorderControl as BorderControl, __experimentalBorderBoxControl as BorderBoxControl, PanelBody, __experimentalAlignmentMatrixControl as AlignmentMatrixControl, AnglePickerControl, Animate, Notice
-} from '@wordpress/components';
+  __experimentalText as Text,
+  GradientPicker,
+  FontSizePicker,
+  FocusableIframe,
+  FocalPointPicker,
+  Flex,
+  FlexBlock,
+  FlexItem,
+  __experimentalDimensionControl as DimensionControl,
+  ComboboxControl,
+  __experimentalBoxControl as BoxControl,
+  __experimentalBorderControl as BorderControl,
+  __experimentalBorderBoxControl as BorderBoxControl,
+  PanelBody,
+  __experimentalAlignmentMatrixControl as AlignmentMatrixControl,
+  AnglePickerControl,
+  Animate,
+  Notice,
+} from "@wordpress/components";
 import { useState } from "@wordpress/element";
 
-const colors = [
-  { name: "Blue 20", color: "#72aee6" }
-]
+const colors = [{ name: "Blue 20", color: "#72aee6" }];
 
 const options = [
   {
-    value: 'small',
-    label: 'Small',
+    value: "small",
+    label: "Small",
   },
   {
-    value: 'normal',
-    label: 'Normal',
+    value: "normal",
+    label: "Normal",
   },
   {
-    value: 'large',
-    label: 'Large',
+    value: "large",
+    label: "Large",
   },
 ];
-
 
 // Font Size Picker
 const fontSizes = [
   {
-    name: __('Small'),
-    slug: 'small',
+    name: __("Small"),
+    slug: "small",
     size: 12,
   },
   {
-    name: __('Big'),
-    slug: 'big',
+    name: __("Big"),
+    slug: "big",
     size: 26,
   },
 ];
 const fallbackFontSize = 16;
 
-
 const Style = () => {
-
-  const [alignment, setAlignment] = useState('center center');
+  const [alignment, setAlignment] = useState("center center");
   const [angle, setAngle] = useState(0);
   const [border, setBorder] = useState();
   const [values, setValues] = useState({
-    top: '50px',
-    left: '10%',
-    right: '10%',
-    bottom: '50px',
+    top: "50px",
+    left: "10%",
+    right: "10%",
+    bottom: "50px",
   });
 
   const [fontSize, setFontSize] = useState();
   const [filteredOptions, setFilteredOptions] = useState(options);
-  const [paddingSize, setPaddingSize] = useState('');
+  const [paddingSize, setPaddingSize] = useState("");
 
   const defaultBorder = {
-    color: '#72aee6',
-    style: 'dashed',
-    width: '1px',
+    color: "#72aee6",
+    style: "dashed",
+    width: "1px",
   };
 
   const [borders, setBorders] = useState({
@@ -77,7 +88,8 @@ const Style = () => {
     y: 0.5,
   });
 
-  const url = 'https://images.unsplash.com/photo-1732058824460-d89cb7b4a38f?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
+  const url =
+    "https://images.unsplash.com/photo-1732058824460-d89cb7b4a38f?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
 
   /* Example function to render the CSS styles based on Focal Point Picker value */
   const style = {
@@ -90,42 +102,36 @@ const Style = () => {
   // Gradient Picker
   const [gradient, setGradient] = useState(null);
 
-
-
-
-
-
   // console.log(fontSize)
   // console.log(paddingSize)
   // console.log(focalPoint)
-  console.log(fontSizePic)
+  console.log(fontSizePic);
   // Gradient Picker
-  console.log(gradient)
-
-
+  console.log(gradient);
 
   return (
     <>
-      <PanelBody className='bPlPanelBody' title={__('Purpose', 'b-blocks')} initialOpen={false}>
-
+      <PanelBody
+        className="bPlPanelBody"
+        title={__("Purpose", "b-blocks")}
+        initialOpen={false}
+      >
         <AlignmentMatrixControl
           value={alignment}
           onChange={(setAlignment) => console.log(setAlignment)}
         />
-
         <AnglePickerControl
           value={angle}
           onChange={(setAngle) => console.log(setAngle)}
         />
-
-        <Animate type='slide-in' options={{ origin: 'top' }}>
+        <Animate type="slide-in" options={{ origin: "top" }}>
           {({ className }) => (
-            <Notice className={className} status='success'>
+            <Notice className={className} status="success">
               <p>Animation finished.</p>
             </Notice>
           )}
         </Animate>
-
+        {/* Border Box Control */}
         <BorderBoxControl
           __next40pxDefaultSize
           color={colors}
@@ -133,22 +139,19 @@ const Style = () => {
           onChange={onChange}
           value={borders}
         />
-
+        {/* Border Control */}
         <BorderControl
           __next40pxDefaultSize
           colors={colors}
-          label={__('Border')}
+          label={__("Border")}
           onChange={setBorder}
           value={border}
         />
-
         <BoxControl
           __next40pxDefaultSize
           values={values}
           onChange={setValues}
         />
-
-
         <ComboboxControl
           __next40pxDefaultSize
           __nextHasNoMarginBottom
@@ -158,22 +161,18 @@ const Style = () => {
           options={filteredOptions}
           onFilterValueChange={(inputValue) =>
             setFilteredOptions(
-              options.filter((option) =>
-                option.value === inputValue,
-              )
+              options.filter((option) => option.value === inputValue)
             )
           }
         />
-
         <DimensionControl
           __nextHasNoMarginBottom
           __next40pxDefaultSize
-          label={'Padding'}
-          icon={'desktop'}
+          label={"Padding"}
+          icon={"desktop"}
           onChange={(value) => setPaddingSize(value)}
           value={paddingSize}
         />
-
         <Flex>
           <FlexItem>
             <p>Code</p>
@@ -184,8 +183,6 @@ const Style = () => {
             {/* <p>Poetry</p> */}
           </FlexBlock>
         </Flex>
-
-
         <FocalPointPicker
           __nextHasNoMarginBottom
           url={url}
@@ -195,12 +192,10 @@ const Style = () => {
           onChange={setFocalPoint}
         />
         <div style={style} />
-
         <FocusableIframe
           src="/my-iframe-url"
-          onFocus={() => console.log('iframe is focused')}
+          onFocus={() => console.log("iframe is focused")}
         />
-
         {/* Font Size Picker */}\
         <FontSizePicker
           __next40pxDefaultSize
@@ -211,44 +206,40 @@ const Style = () => {
             setFontSizePic(newFontSize);
           }}
         />
-
         {/* Gradient Picker */}
         <GradientPicker
           value={gradient}
           onChange={(currentGradient) => setGradient(currentGradient)}
           gradients={[
             {
-              name: 'JShine',
+              name: "JShine",
               gradient:
-                'linear-gradient(135deg,#12c2e9 0%,#c471ed 50%,#f64f59 100%)',
-              slug: 'jshine',
+                "linear-gradient(135deg,#12c2e9 0%,#c471ed 50%,#f64f59 100%)",
+              slug: "jshine",
             },
             {
-              name: 'Moonlit Asteroid',
+              name: "Moonlit Asteroid",
               gradient:
-                'linear-gradient(135deg,#0F2027 0%, #203A43 0%, #2c5364 100%)',
-              slug: 'moonlit-asteroid',
+                "linear-gradient(135deg,#0F2027 0%, #203A43 0%, #2c5364 100%)",
+              slug: "moonlit-asteroid",
             },
             {
-              name: 'Rastafarie',
+              name: "Rastafarie",
               gradient:
-                'linear-gradient(135deg,#1E9600 0%, #FFF200 0%, #FF0000 100%)',
-              slug: 'rastafari',
+                "linear-gradient(135deg,#1E9600 0%, #FFF200 0%, #FF0000 100%)",
+              slug: "rastafari",
             },
           ]}
         />
-
         {/* Grid */}
         <Grid columns={2}>
           <Text>Code</Text>
           <Text>is</Text>
           <Text>Poetry</Text>
         </Grid>
-
-
       </PanelBody>
     </>
-  )
-}
+  );
+};
 
-export default Style
+export default Style;

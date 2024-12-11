@@ -57,6 +57,7 @@ import {
   Button,
   Guide,
   TextareaControl,
+  PanelRow,
 } from "@wordpress/components";
 import { wordpress } from "@wordpress/icons";
 
@@ -115,6 +116,16 @@ import MyToggleGroupControl from "../../../practice/ToggleGroupControl";
 import MyToolbar from "../../../practice/ToolbarButton";
 import MyToolbarDropdownMenu from "../../../practice/ToolbarDropdownMenu";
 import MyToolbarGroup from "../../../practice/ToolbarGroup";
+import MyToolbarItem from "../../../practice/ToolbarItem";
+import MyToolbars from "../../../practice/Toolbars";
+import DimensionPanel from "../../../practice/ToolsPanel";
+import MyTooltip from "../../../practice/Tooltip";
+import TreeMenu from "../../../practice/TreeGrid";
+import MyTreeSelect from "../../../practice/TreeSelect";
+import MyTruncate from "../../../practice/Truncate";
+import MyUnitControl from "../../../practice/UnitControl";
+import VerticalStack from "../../../practice/VStack";
+import MediaUploader from "../../../practice/MediaUploadCheck";
 
 const options = [
   {
@@ -361,6 +372,8 @@ const General = ({
       title={__("Purpose", "b-blocks")}
       initialOpen={false}
     >
+      <PanelRow>My Panel Inputs and Labels</PanelRow>
+      <MyPanel />
       <SelectControl
         label={__("Purpose", "b-blocks")}
         labelPosition="left"
@@ -610,6 +623,20 @@ const General = ({
       >
         Upload
       </FormFileUpload>
+      <FormFileUpload
+        __next40pxDefaultSize
+        accept="audio/*, video/*, image/*, application/pdf"
+        onChange={(event) => {
+          const files = event.currentTarget.files;
+          for (let i = 0; i < files.length; i++) {
+            console.log(`File ${i + 1}:`, files[i].name, files[i].type);
+            // Add logic to handle different file types here
+          }
+          console.log(event, files);
+        }}
+      >
+        Upload
+      </FormFileUpload>
       {/* Form Toggle */}
       <FormToggle
         checked={isChecked}
@@ -791,6 +818,30 @@ const General = ({
       <MyToolbarDropdownMenu />
       {/* My Toolbar Group */}
       <MyToolbarGroup />
+      {/* Toolbar Item */}
+      <MyToolbarItem />
+      {/* My Toolbars */}
+      <MyToolbars />
+      {/* Dimension Panel */}
+      <DimensionPanel />
+      {/* Tooltip */}
+      <MyTooltip />
+      {/* Tree Grid */}
+      {/* <TreeMenu /> */}
+      {/* My Tree Select */}
+      <MyTreeSelect />
+      {/* Truncate */}
+      <MyTruncate />
+      {/* Unit Control */}
+      <MyUnitControl />
+      {/* Vertical Stack | VStack */}
+      <Spacer>
+        <VerticalStack />
+      </Spacer>
+      {/* file- MediaUpload and MediaUploadCheck */}
+      <Spacer>
+        <MediaUploader />
+      </Spacer>
     </PanelBody>
   );
 };
