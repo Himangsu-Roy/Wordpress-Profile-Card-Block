@@ -2641,6 +2641,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _Settings_Settings__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Settings/Settings */ "./src/Components/Backend/Settings/Settings.js");
 /* harmony import */ var _Common_Style__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Common/Style */ "./src/Components/Common/Style.js");
+/* harmony import */ var _UsefulComponents_MyUsefulTextControl__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../UsefulComponents/MyUsefulTextControl */ "./src/Components/UsefulComponents/MyUsefulTextControl.js");
+/* harmony import */ var _UsefulComponents_MyUsefulSelectControl__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../UsefulComponents/MyUsefulSelectControl */ "./src/Components/UsefulComponents/MyUsefulSelectControl.js");
+/* harmony import */ var _UsefulComponents_utils_genderOptions__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../UsefulComponents/utils/genderOptions */ "./src/Components/UsefulComponents/utils/genderOptions.js");
+/* harmony import */ var _UsefulComponents_MyUsefulFormFileUpload__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../UsefulComponents/MyUsefulFormFileUpload */ "./src/Components/UsefulComponents/MyUsefulFormFileUpload.js");
+/* harmony import */ var _UsefulComponents_MyUsefulCheckboxControl__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../UsefulComponents/MyUsefulCheckboxControl */ "./src/Components/UsefulComponents/MyUsefulCheckboxControl.js");
+/* harmony import */ var _UsefulComponents_MyUsefulButton__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../UsefulComponents/MyUsefulButton */ "./src/Components/UsefulComponents/MyUsefulButton.js");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_10__);
+
+
+
+
+
+
+
 
 
 
@@ -2664,7 +2679,58 @@ const Edit = props => {
     id: `block-${clientId}`
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "bBlocksTestPurpose"
-  }, purposeType === "test" ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, "Every text is written for a reason. For example, every text message you send has a purpose, whether that is to let your mum know when you will be home.") : (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, "If someone sends you an invitation to a party, for example, they are telling you what time to arrive and what the sender is celebrating, and they might even."))));
+  }, purposeType === "test" ?
+  // <p>
+  // 	Every text is written for a reason. For example, every text message you send has a purpose, whether that is to let your mum know when you will be home.
+  // </p>
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_UsefulComponents_MyUsefulTextControl__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    label: "Name",
+    placeholder: "First Name",
+    type: "text"
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_UsefulComponents_MyUsefulTextControl__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    label: "",
+    placeholder: "Last Name",
+    type: "text"
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_UsefulComponents_MyUsefulTextControl__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    label: "Age",
+    placeholder: "ex:25",
+    type: "number"
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_UsefulComponents_MyUsefulTextControl__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    label: "Date of Birth",
+    placeholder: "",
+    type: "date"
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_UsefulComponents_MyUsefulSelectControl__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    label: "Gender",
+    options: _UsefulComponents_utils_genderOptions__WEBPACK_IMPORTED_MODULE_6__["default"]
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_UsefulComponents_MyUsefulTextControl__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    label: "Email",
+    placeholder: "example@email.com",
+    type: "email"
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_UsefulComponents_MyUsefulTextControl__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    label: "Address",
+    placeholder: "Street address",
+    type: "text"
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_UsefulComponents_MyUsefulTextControl__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    label: "",
+    placeholder: "Street address line 2",
+    type: "text"
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_UsefulComponents_MyUsefulTextControl__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    label: "Phone",
+    placeholder: "Area code",
+    type: "number"
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_UsefulComponents_MyUsefulTextControl__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    label: "",
+    placeholder: "Phone number",
+    type: "number"
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_UsefulComponents_MyUsefulTextControl__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    label: "Post/Zip code",
+    placeholder: "ex:8976",
+    type: "number"
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_UsefulComponents_MyUsefulTextControl__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    label: "City",
+    placeholder: "ex:New York",
+    type: "text"
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_UsefulComponents_MyUsefulFormFileUpload__WEBPACK_IMPORTED_MODULE_7__["default"], null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_10__.__experimentalSpacer, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_UsefulComponents_MyUsefulCheckboxControl__WEBPACK_IMPORTED_MODULE_8__["default"], null)), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_UsefulComponents_MyUsefulButton__WEBPACK_IMPORTED_MODULE_9__["default"], null)) : (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, "If someone sends you an invitation to a party, for example, they are telling you what time to arrive and what the sender is celebrating, and they might even."))));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Edit);
 
@@ -2687,17 +2753,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_65__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/wordpress.js");
+/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_72__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/wordpress.js");
 /* harmony import */ var _utils_options__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../utils/options */ "./src/utils/options.js");
 /* harmony import */ var _utils_functions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../utils/functions */ "./src/utils/functions.js");
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_59__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/icon/index.js");
-/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_60__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/more.js");
-/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_61__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/arrow-up.js");
-/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_62__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/arrow-right.js");
-/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_63__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/arrow-down.js");
-/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_64__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/arrow-left.js");
+/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_66__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/icon/index.js");
+/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_67__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/more.js");
+/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_68__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/arrow-up.js");
+/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_69__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/arrow-right.js");
+/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_70__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/arrow-down.js");
+/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_71__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/arrow-left.js");
 /* harmony import */ var _practice_skopenMessages__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../practice/skopenMessages */ "./src/Components/practice/skopenMessages.js");
 /* harmony import */ var _practice_ItemGroup__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../practice/ItemGroup */ "./src/Components/practice/ItemGroup.js");
 /* harmony import */ var _practice_KeyboardShortcut__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../../practice/KeyboardShortcut */ "./src/Components/practice/KeyboardShortcut.js");
@@ -2752,6 +2818,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _practice_UnitControl__WEBPACK_IMPORTED_MODULE_56__ = __webpack_require__(/*! ../../../practice/UnitControl */ "./src/Components/practice/UnitControl.js");
 /* harmony import */ var _practice_VStack__WEBPACK_IMPORTED_MODULE_57__ = __webpack_require__(/*! ../../../practice/VStack */ "./src/Components/practice/VStack.js");
 /* harmony import */ var _practice_MediaUploadCheck__WEBPACK_IMPORTED_MODULE_58__ = __webpack_require__(/*! ../../../practice/MediaUploadCheck */ "./src/Components/practice/MediaUploadCheck.js");
+/* harmony import */ var _UsefulComponents_MyUsefulTextControl__WEBPACK_IMPORTED_MODULE_59__ = __webpack_require__(/*! ../../../UsefulComponents/MyUsefulTextControl */ "./src/Components/UsefulComponents/MyUsefulTextControl.js");
+/* harmony import */ var _UsefulComponents_MyUsefulTextareaControl__WEBPACK_IMPORTED_MODULE_60__ = __webpack_require__(/*! ../../../UsefulComponents/MyUsefulTextareaControl */ "./src/Components/UsefulComponents/MyUsefulTextareaControl.js");
+/* harmony import */ var _UsefulComponents_MyUsefulNumberControl__WEBPACK_IMPORTED_MODULE_61__ = __webpack_require__(/*! ../../../UsefulComponents/MyUsefulNumberControl */ "./src/Components/UsefulComponents/MyUsefulNumberControl.js");
+/* harmony import */ var _UsefulComponents_MyUsefulRangeControl__WEBPACK_IMPORTED_MODULE_62__ = __webpack_require__(/*! ../../../UsefulComponents/MyUsefulRangeControl */ "./src/Components/UsefulComponents/MyUsefulRangeControl.js");
+/* harmony import */ var _UsefulComponents_MyUsefulToggleControl__WEBPACK_IMPORTED_MODULE_63__ = __webpack_require__(/*! ../../../UsefulComponents/MyUsefulToggleControl */ "./src/Components/UsefulComponents/MyUsefulToggleControl.js");
+/* harmony import */ var _UsefulComponents_MyUsefulCustomSelectControl__WEBPACK_IMPORTED_MODULE_64__ = __webpack_require__(/*! ../../../UsefulComponents/MyUsefulCustomSelectControl */ "./src/Components/UsefulComponents/MyUsefulCustomSelectControl.js");
+/* harmony import */ var _UsefulComponents_MyUsefulSelectControl__WEBPACK_IMPORTED_MODULE_65__ = __webpack_require__(/*! ../../../UsefulComponents/MyUsefulSelectControl */ "./src/Components/UsefulComponents/MyUsefulSelectControl.js");
 
 
 
@@ -2763,6 +2836,14 @@ __webpack_require__.r(__webpack_exports__);
 
 
 // import MyModal from '../../../practice/Modal';
+
+
+
+
+
+
+
+
 
 
 
@@ -3159,30 +3240,30 @@ const General = ({
     draggable: true,
     onDragStart: onDraggableStart,
     onDragEnd: onDraggableEnd
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_icons__WEBPACK_IMPORTED_MODULE_59__["default"], {
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_60__["default"]
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_icons__WEBPACK_IMPORTED_MODULE_66__["default"], {
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_67__["default"]
   })))))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, hasDropped ? "Dropped!" : "Drop something here", (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.DropZone, {
     onFilesDrop: () => setHasDropped(true),
     onHTMLDrop: () => setHasDropped(true),
     onDrop: () => setHasDropped(true)
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.DropdownMenu, {
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_60__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_67__["default"],
     label: "Select a direction",
     controls: [{
       title: "Up",
-      icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_61__["default"],
+      icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_68__["default"],
       onClick: () => console.log("up")
     }, {
       title: "Right",
-      icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_62__["default"],
+      icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_69__["default"],
       onClick: () => console.log("right")
     }, {
       title: "Down",
-      icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_63__["default"],
+      icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_70__["default"],
       onClick: () => console.log("down")
     }, {
       title: "Left",
-      icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_64__["default"],
+      icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_71__["default"],
       onClick: () => console.log("left")
     }]
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Dropdown, {
@@ -3261,9 +3342,9 @@ const General = ({
   }), text && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(EnhancedComponent, null), text && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Button, {
     variant: "secondary",
     onClick: unmount
-  }, "Unmount")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_practice_skopenMessages__WEBPACK_IMPORTED_MODULE_6__["default"], null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_icons__WEBPACK_IMPORTED_MODULE_59__["default"], {
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_65__["default"]
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_practice_ItemGroup__WEBPACK_IMPORTED_MODULE_7__["default"], null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_practice_KeyboardShortcut__WEBPACK_IMPORTED_MODULE_8__["default"], null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_practice_MyMenuGroup__WEBPACK_IMPORTED_MODULE_9__["default"], null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_practice_MyMenuItem__WEBPACK_IMPORTED_MODULE_10__["default"], null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_practice_MyMenuItemsChoice__WEBPACK_IMPORTED_MODULE_11__["default"], null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_practice_MyModal__WEBPACK_IMPORTED_MODULE_12__["default"], null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_practice_MyNavigableContainer___WEBPACK_IMPORTED_MODULE_13__["default"], null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_practice_MyNavigation__WEBPACK_IMPORTED_MODULE_14__["default"], null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_practice_MyNotice__WEBPACK_IMPORTED_MODULE_16__["default"], null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_practice_MyNumberControl__WEBPACK_IMPORTED_MODULE_17__["default"], null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_practice_MyPanel__WEBPACK_IMPORTED_MODULE_18__["default"], null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_practice_MyPlacehoder__WEBPACK_IMPORTED_MODULE_19__["default"], null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_practice_MyPopover__WEBPACK_IMPORTED_MODULE_20__["default"], null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_practice_MyLoadingComponent__WEBPACK_IMPORTED_MODULE_21__["default"], null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_practice_MyQueryControls__WEBPACK_IMPORTED_MODULE_22__["default"], null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_practice_MyRadioControl__WEBPACK_IMPORTED_MODULE_23__["default"], null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_practice_MyControlledRadioRadioGroup__WEBPACK_IMPORTED_MODULE_24__["default"], null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_practice_MyRangeControl__WEBPACK_IMPORTED_MODULE_25__["default"], null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_practice_ResponsiveWrapper__WEBPACK_IMPORTED_MODULE_28__["default"], null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_practice_Sandbox__WEBPACK_IMPORTED_MODULE_29__["default"], null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_practice_ScrollLock__WEBPACK_IMPORTED_MODULE_30__["default"], null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_practice_SearchControl__WEBPACK_IMPORTED_MODULE_31__["default"], null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_practice_SelectControl__WEBPACK_IMPORTED_MODULE_32__["default"], null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_practice_SlotFill__WEBPACK_IMPORTED_MODULE_33__["default"], null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_practice_Snackbar__WEBPACK_IMPORTED_MODULE_34__["default"], null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_practice_Spacer__WEBPACK_IMPORTED_MODULE_35__["default"], null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_practice_Spinner__WEBPACK_IMPORTED_MODULE_36__["default"], null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_practice_Surface__WEBPACK_IMPORTED_MODULE_37__["default"], null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_practice_TabPanel__WEBPACK_IMPORTED_MODULE_38__["default"], null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_practice_TextControl__WEBPACK_IMPORTED_MODULE_39__["default"], null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_practice_TextHighlight__WEBPACK_IMPORTED_MODULE_40__["default"], null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_practice_TextareaControl__WEBPACK_IMPORTED_MODULE_41__["default"], null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_practice_ToggleControl__WEBPACK_IMPORTED_MODULE_42__["default"], null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_practice_ToggleGroupControlOptionIcon__WEBPACK_IMPORTED_MODULE_43__["default"], null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_practice_ToggleGroupControlOption__WEBPACK_IMPORTED_MODULE_44__["default"], null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_practice_ToggleGroupControl__WEBPACK_IMPORTED_MODULE_45__["default"], null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_practice_ToolbarButton__WEBPACK_IMPORTED_MODULE_46__["default"], null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_practice_ToolbarDropdownMenu__WEBPACK_IMPORTED_MODULE_47__["default"], null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_practice_ToolbarGroup__WEBPACK_IMPORTED_MODULE_48__["default"], null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_practice_ToolbarItem__WEBPACK_IMPORTED_MODULE_49__["default"], null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_practice_Toolbars__WEBPACK_IMPORTED_MODULE_50__["default"], null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_practice_ToolsPanel__WEBPACK_IMPORTED_MODULE_51__["default"], null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_practice_Tooltip__WEBPACK_IMPORTED_MODULE_52__["default"], null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_practice_TreeSelect__WEBPACK_IMPORTED_MODULE_54__["default"], null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_practice_Truncate__WEBPACK_IMPORTED_MODULE_55__["default"], null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_practice_UnitControl__WEBPACK_IMPORTED_MODULE_56__["default"], null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.__experimentalSpacer, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_practice_VStack__WEBPACK_IMPORTED_MODULE_57__["default"], null)), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.__experimentalSpacer, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_practice_MediaUploadCheck__WEBPACK_IMPORTED_MODULE_58__["default"], null)));
+  }, "Unmount")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_practice_skopenMessages__WEBPACK_IMPORTED_MODULE_6__["default"], null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_icons__WEBPACK_IMPORTED_MODULE_66__["default"], {
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_72__["default"]
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_practice_ItemGroup__WEBPACK_IMPORTED_MODULE_7__["default"], null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_practice_KeyboardShortcut__WEBPACK_IMPORTED_MODULE_8__["default"], null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_practice_MyMenuGroup__WEBPACK_IMPORTED_MODULE_9__["default"], null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_practice_MyMenuItem__WEBPACK_IMPORTED_MODULE_10__["default"], null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_practice_MyMenuItemsChoice__WEBPACK_IMPORTED_MODULE_11__["default"], null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_practice_MyModal__WEBPACK_IMPORTED_MODULE_12__["default"], null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_practice_MyNavigableContainer___WEBPACK_IMPORTED_MODULE_13__["default"], null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_practice_MyNavigation__WEBPACK_IMPORTED_MODULE_14__["default"], null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_practice_MyNotice__WEBPACK_IMPORTED_MODULE_16__["default"], null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_practice_MyNumberControl__WEBPACK_IMPORTED_MODULE_17__["default"], null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_practice_MyPanel__WEBPACK_IMPORTED_MODULE_18__["default"], null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_practice_MyPlacehoder__WEBPACK_IMPORTED_MODULE_19__["default"], null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_practice_MyPopover__WEBPACK_IMPORTED_MODULE_20__["default"], null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_practice_MyLoadingComponent__WEBPACK_IMPORTED_MODULE_21__["default"], null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_practice_MyQueryControls__WEBPACK_IMPORTED_MODULE_22__["default"], null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_practice_MyRadioControl__WEBPACK_IMPORTED_MODULE_23__["default"], null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_practice_MyControlledRadioRadioGroup__WEBPACK_IMPORTED_MODULE_24__["default"], null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_practice_MyRangeControl__WEBPACK_IMPORTED_MODULE_25__["default"], null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_practice_ResponsiveWrapper__WEBPACK_IMPORTED_MODULE_28__["default"], null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_practice_Sandbox__WEBPACK_IMPORTED_MODULE_29__["default"], null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_practice_ScrollLock__WEBPACK_IMPORTED_MODULE_30__["default"], null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_practice_SearchControl__WEBPACK_IMPORTED_MODULE_31__["default"], null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_practice_SelectControl__WEBPACK_IMPORTED_MODULE_32__["default"], null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_practice_SlotFill__WEBPACK_IMPORTED_MODULE_33__["default"], null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_practice_Snackbar__WEBPACK_IMPORTED_MODULE_34__["default"], null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_practice_Spacer__WEBPACK_IMPORTED_MODULE_35__["default"], null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_practice_Spinner__WEBPACK_IMPORTED_MODULE_36__["default"], null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_practice_Surface__WEBPACK_IMPORTED_MODULE_37__["default"], null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_practice_TabPanel__WEBPACK_IMPORTED_MODULE_38__["default"], null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_practice_TextControl__WEBPACK_IMPORTED_MODULE_39__["default"], null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_practice_TextHighlight__WEBPACK_IMPORTED_MODULE_40__["default"], null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_practice_TextareaControl__WEBPACK_IMPORTED_MODULE_41__["default"], null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_practice_ToggleControl__WEBPACK_IMPORTED_MODULE_42__["default"], null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_practice_ToggleGroupControlOptionIcon__WEBPACK_IMPORTED_MODULE_43__["default"], null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_practice_ToggleGroupControlOption__WEBPACK_IMPORTED_MODULE_44__["default"], null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_practice_ToggleGroupControl__WEBPACK_IMPORTED_MODULE_45__["default"], null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_practice_ToolbarButton__WEBPACK_IMPORTED_MODULE_46__["default"], null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_practice_ToolbarDropdownMenu__WEBPACK_IMPORTED_MODULE_47__["default"], null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_practice_ToolbarGroup__WEBPACK_IMPORTED_MODULE_48__["default"], null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_practice_ToolbarItem__WEBPACK_IMPORTED_MODULE_49__["default"], null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_practice_Toolbars__WEBPACK_IMPORTED_MODULE_50__["default"], null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_practice_ToolsPanel__WEBPACK_IMPORTED_MODULE_51__["default"], null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_practice_Tooltip__WEBPACK_IMPORTED_MODULE_52__["default"], null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_practice_TreeSelect__WEBPACK_IMPORTED_MODULE_54__["default"], null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_practice_Truncate__WEBPACK_IMPORTED_MODULE_55__["default"], null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_practice_UnitControl__WEBPACK_IMPORTED_MODULE_56__["default"], null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.__experimentalSpacer, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_practice_VStack__WEBPACK_IMPORTED_MODULE_57__["default"], null)), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.__experimentalSpacer, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_practice_MediaUploadCheck__WEBPACK_IMPORTED_MODULE_58__["default"], null)), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_UsefulComponents_MyUsefulTextControl__WEBPACK_IMPORTED_MODULE_59__["default"], null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_UsefulComponents_MyUsefulTextareaControl__WEBPACK_IMPORTED_MODULE_60__["default"], null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_UsefulComponents_MyUsefulNumberControl__WEBPACK_IMPORTED_MODULE_61__["default"], null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_UsefulComponents_MyUsefulRangeControl__WEBPACK_IMPORTED_MODULE_62__["default"], null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_UsefulComponents_MyUsefulToggleControl__WEBPACK_IMPORTED_MODULE_63__["default"], null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_UsefulComponents_MyUsefulCustomSelectControl__WEBPACK_IMPORTED_MODULE_64__["default"], null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_UsefulComponents_MyUsefulSelectControl__WEBPACK_IMPORTED_MODULE_65__["default"], null));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (General);
 
@@ -3577,6 +3658,474 @@ const Style = () => {
   });
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Style);
+
+/***/ }),
+
+/***/ "./src/Components/UsefulComponents/MyUsefulButton.js":
+/*!***********************************************************!*\
+  !*** ./src/Components/UsefulComponents/MyUsefulButton.js ***!
+  \***********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
+
+
+const MyUsefulButton = () => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+  variant: "primary"
+}, "Submit");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (MyUsefulButton);
+
+/***/ }),
+
+/***/ "./src/Components/UsefulComponents/MyUsefulCheckboxControl.js":
+/*!********************************************************************!*\
+  !*** ./src/Components/UsefulComponents/MyUsefulCheckboxControl.js ***!
+  \********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
+
+
+
+const MyUsefulCheckboxControl = () => {
+  const [isChecked, setChecked] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(true);
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.CheckboxControl, {
+    __nextHasNoMarginBottom: true,
+    label: "I agree to the defined terms, conditions, and policies"
+    //   help="Is the user a author or not?"
+    ,
+    checked: isChecked,
+    onChange: setChecked
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (MyUsefulCheckboxControl);
+
+/***/ }),
+
+/***/ "./src/Components/UsefulComponents/MyUsefulCustomSelectControl.js":
+/*!************************************************************************!*\
+  !*** ./src/Components/UsefulComponents/MyUsefulCustomSelectControl.js ***!
+  \************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
+
+
+
+const options = [{
+  key: "small",
+  name: "Small",
+  style: {
+    fontSize: "50%"
+  }
+}, {
+  key: "normal",
+  name: "Normal",
+  style: {
+    fontSize: "100%"
+  }
+}, {
+  key: "large",
+  name: "Large",
+  style: {
+    fontSize: "200%"
+  }
+}, {
+  key: "huge",
+  name: "Huge",
+  style: {
+    fontSize: "300%"
+  }
+}];
+function MyUsefulCustomSelectControl() {
+  const [fontSize, setFontSize] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)();
+  console.log(fontSize?.style?.fontSize);
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.CustomSelectControl, {
+    __next40pxDefaultSize: true,
+    label: "Font Size",
+    options: options,
+    onChange: ({
+      selectedItem
+    }) => setFontSize(selectedItem)
+  });
+}
+function MyUsefulControlledCustomSelectControl() {
+  const [fontSize, setFontSize] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(options[0]);
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.CustomSelectControl, {
+    __next40pxDefaultSize: true,
+    label: "Font Size",
+    options: options,
+    onChange: ({
+      selectedItem
+    }) => setFontSize(selectedItem),
+    value: options.find(option => option.key === fontSize.key)
+  });
+}
+
+// export default MyUsefulControlledCustomSelectControl;
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (MyUsefulCustomSelectControl);
+
+/***/ }),
+
+/***/ "./src/Components/UsefulComponents/MyUsefulFormFileUpload.js":
+/*!*******************************************************************!*\
+  !*** ./src/Components/UsefulComponents/MyUsefulFormFileUpload.js ***!
+  \*******************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
+
+
+const MyUsefulFormFileUpload = () => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.FormFileUpload, {
+  __next40pxDefaultSize: true,
+  accept: "image/*",
+  onChange: event => console.log(event.currentTarget.files)
+}, "Upload");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (MyUsefulFormFileUpload);
+
+/***/ }),
+
+/***/ "./src/Components/UsefulComponents/MyUsefulNumberControl.js":
+/*!******************************************************************!*\
+  !*** ./src/Components/UsefulComponents/MyUsefulNumberControl.js ***!
+  \******************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
+
+
+
+const MyUsefulNumberControl = () => {
+  const [value, setValue] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(10);
+  console.log(value);
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.__experimentalNumberControl, {
+    __next40pxDefaultSize: true,
+    isShiftStepEnabled: true,
+    onChange: setValue,
+    shiftStep: 10,
+    value: value
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (MyUsefulNumberControl);
+
+/***/ }),
+
+/***/ "./src/Components/UsefulComponents/MyUsefulRangeControl.js":
+/*!*****************************************************************!*\
+  !*** ./src/Components/UsefulComponents/MyUsefulRangeControl.js ***!
+  \*****************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
+
+
+
+const MyUsefulRangeControl = () => {
+  const [columns, setColumns] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(2);
+  console.log(columns);
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    __nextHasNoMarginBottom: true,
+    __next40pxDefaultSize: true,
+    label: "Columns",
+    value: columns,
+    onChange: value => setColumns(value),
+    min: 2,
+    max: 10
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (MyUsefulRangeControl);
+
+// const marks = [
+//     {
+//         value: 0,
+//         label: '0',
+//     },
+//     {
+//         value: 1,
+//         label: '1',
+//     },
+//     {
+//         value: 8,
+//         label: '8',
+//     },
+//     {
+//         value: 10,
+//         label: '10',
+//     },
+// ];
+
+// const MyRangeControl() {
+//     return ( <RangeControl marks={ marks } min={ 0 } max={ 10 } step={ 1 } /> )
+// }
+
+/***/ }),
+
+/***/ "./src/Components/UsefulComponents/MyUsefulSelectControl.js":
+/*!******************************************************************!*\
+  !*** ./src/Components/UsefulComponents/MyUsefulSelectControl.js ***!
+  \******************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
+
+
+
+const MyUsefulSelectControl = ({
+  label = "Select Gender",
+  options = []
+}) => {
+  const [selectedOption, setSelectedOption] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(options[0]?.value || "");
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
+    label: label,
+    value: selectedOption,
+    options: options,
+    onChange: gender => setSelectedOption(gender),
+    __next40pxDefaultSize: true,
+    __nextHasNoMarginBottom: true
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (MyUsefulSelectControl);
+
+//? Render a user interface to select multiple users from a list.
+// options={[
+//         { label: "Big", value: "100%" },
+//         { label: "Medium", value: "50%" },
+//         { label: "Small", value: "25%" },
+//       ]}
+
+{
+  /* <SelectControl
+  multiple
+  label={__("User")}
+  value={this.state.users} // e.g: value = [ 'a', 'c' ]
+  onChange={(users) => {
+    this.setState({ users });
+  }}
+  options={[
+    { value: "", label: "Select a User", disabled: true },
+    { value: "a", label: "User A" },
+    { value: "b", label: "User B" },
+    { value: "c", label: "User c" },
+  ]}
+  __next40pxDefaultSize
+  __nextHasNoMarginBottom
+  />; */
+}
+
+//? Render a user interface to select items within groups
+// const [item, setItem] = useState("");
+
+// // ...
+
+// <SelectControl
+//   label={__("My dinosaur")}
+//   value={item} // e.g: value = 'a'
+//   onChange={(selection) => {
+//     setItem(selection);
+//   }}
+//   __next40pxDefaultSize
+//   __nextHasNoMarginBottom
+// >
+//   <optgroup label="Theropods">
+//     <option value="Tyrannosaurus">Tyrannosaurus</option>
+//     <option value="Velociraptor">Velociraptor</option>
+//     <option value="Deinonychus">Deinonychus</option>
+//   </optgroup>
+//   <optgroup label="Sauropods">
+//     <option value="Diplodocus">Diplodocus</option>
+//     <option value="Saltasaurus">Saltasaurus</option>
+//     <option value="Apatosaurus">Apatosaurus</option>
+//   </optgroup>
+// </SelectControl>;
+
+/***/ }),
+
+/***/ "./src/Components/UsefulComponents/MyUsefulTextControl.js":
+/*!****************************************************************!*\
+  !*** ./src/Components/UsefulComponents/MyUsefulTextControl.js ***!
+  \****************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
+
+
+
+const MyUsefulTextControl = ({
+  label,
+  placeholder,
+  type
+}) => {
+  const [className, setClassName] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)("");
+  console.log(className);
+  console.log(label);
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
+    __nextHasNoMarginBottom: true,
+    __next40pxDefaultSize: true,
+    label: label,
+    value: className,
+    placeholder: placeholder,
+    type: type,
+    onChange: value => setClassName(value)
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (MyUsefulTextControl);
+
+/***/ }),
+
+/***/ "./src/Components/UsefulComponents/MyUsefulTextareaControl.js":
+/*!********************************************************************!*\
+  !*** ./src/Components/UsefulComponents/MyUsefulTextareaControl.js ***!
+  \********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
+
+
+
+const MyUsefulTextareaControl = () => {
+  const [text, setText] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)("");
+  console.log(text);
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextareaControl, {
+    __nextHasNoMarginBottom: true,
+    label: "Text",
+    help: "Enter some text",
+    value: text,
+    onChange: value => setText(value)
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (MyUsefulTextareaControl);
+
+/***/ }),
+
+/***/ "./src/Components/UsefulComponents/MyUsefulToggleControl.js":
+/*!******************************************************************!*\
+  !*** ./src/Components/UsefulComponents/MyUsefulToggleControl.js ***!
+  \******************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
+
+
+
+const MyUsefulToggleControl = () => {
+  const [hasFixedBackground, setHasFixedBackground] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
+  console.log(hasFixedBackground);
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
+    __nextHasNoMarginBottom: true,
+    label: "Fixed Background",
+    help: hasFixedBackground ? "Has fixed background." : "No fixed background.",
+    checked: hasFixedBackground,
+    onChange: newValue => {
+      setHasFixedBackground(newValue);
+    }
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (MyUsefulToggleControl);
+
+/***/ }),
+
+/***/ "./src/Components/UsefulComponents/utils/genderOptions.js":
+/*!****************************************************************!*\
+  !*** ./src/Components/UsefulComponents/utils/genderOptions.js ***!
+  \****************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+const genderOptions = [{
+  label: "Male",
+  value: "male"
+}, {
+  label: "Female",
+  value: "female"
+}, {
+  label: "Others",
+  value: "others"
+}];
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (genderOptions);
 
 /***/ }),
 
@@ -4989,7 +5538,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function MyToggleGroupControl() {
-  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.__experimentalToggleGroupControl, {
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, "ToggleGroup Control"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.__experimentalToggleGroupControl, {
     label: "my label",
     value: "vertical",
     isBlock: true,
@@ -5001,7 +5550,7 @@ function MyToggleGroupControl() {
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.__experimentalToggleGroupControlOption, {
     value: "vertical",
     label: "Vertical"
-  }));
+  })));
 }
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (MyToggleGroupControl);
 

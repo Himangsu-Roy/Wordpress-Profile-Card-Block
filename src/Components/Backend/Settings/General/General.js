@@ -126,6 +126,14 @@ import MyTruncate from "../../../practice/Truncate";
 import MyUnitControl from "../../../practice/UnitControl";
 import VerticalStack from "../../../practice/VStack";
 import MediaUploader from "../../../practice/MediaUploadCheck";
+import MyUsefulTextControl from "../../../UsefulComponents/MyUsefulTextControl";
+import MyUsefulTextareaControl from "../../../UsefulComponents/MyUsefulTextareaControl";
+import MyUsefulNumberControl from "../../../UsefulComponents/MyUsefulNumberControl";
+import MyUsefulRangeControl from "../../../UsefulComponents/MyUsefulRangeControl";
+import MyUsefulToggleControl from "../../../UsefulComponents/MyUsefulToggleControl";
+import MyUsefulCustomSelectControl from "../../../UsefulComponents/MyUsefulCustomSelectControl";
+import MyUsefulControlledCustomSelectControl from "../../../UsefulComponents/MyUsefulCustomSelectControl";
+import MyUsefulSelectControl from "../../../UsefulComponents/MyUsefulSelectControl";
 
 const options = [
   {
@@ -842,6 +850,22 @@ const General = ({
       <Spacer>
         <MediaUploader />
       </Spacer>
+      {/* //! Most Useful Components Start */}
+      <MyUsefulTextControl />
+      {/* My Useful Textarea Control */}
+      <MyUsefulTextareaControl />
+      {/* My Useful Number Control */}
+      <MyUsefulNumberControl />
+      {/* My Useful Range Control */}
+      <MyUsefulRangeControl />
+      {/* MY Useful Toggle Control */}
+      <MyUsefulToggleControl />
+      {/* My Useful Custom Select Control */}
+      <MyUsefulCustomSelectControl />
+      {/* My Useful Controlled Custom Select Control */}
+      {/* <MyUsefulControlledCustomSelectControl /> */}
+      {/* My Useful Select Control */}
+      <MyUsefulSelectControl />
     </PanelBody>
   );
 };
