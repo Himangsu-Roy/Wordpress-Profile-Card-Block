@@ -33,5 +33,5 @@ if (! class_exists('PREFIXPlugin')) {
 			register_block_type(__DIR__ . '/build');
 		}
 	}
-	new PREFIXPlugin();
+	new PREFIXPlugin();        
 }

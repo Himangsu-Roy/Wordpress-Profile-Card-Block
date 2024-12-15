@@ -3,7 +3,7 @@ import { SelectControl } from "@wordpress/components";
 
 const MyUsefulSelectControl = ({ label = "Select Gender", options = [] }) => {
   const [selectedOption, setSelectedOption] = useState(options[0]?.value || "");
-
+  console.log(selectedOption);
   return (
     <SelectControl
       label={label}
