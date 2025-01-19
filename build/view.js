@@ -67,6 +67,110 @@ const BlockName = ({
 
 /***/ }),
 
+/***/ "./src/Components/ProfileCard/ProfileCard.js":
+/*!***************************************************!*\
+  !*** ./src/Components/ProfileCard/ProfileCard.js ***!
+  \***************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+const ProfileCard = ({
+  attribute,
+  setAttribute
+}) => {
+  console.log(attribute);
+  const {
+    bio,
+    name,
+    title,
+    stats,
+    skills
+  } = attribute;
+  const {
+    followers,
+    following,
+    projects
+  } = stats;
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("body", null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "container"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "profile-card"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "card-content"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "avatar-wrapper"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "avatar"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "avatar-inner"
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "avatar-glow"
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "avatar-border"
+  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "profile-info"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
+    className: "name"
+  }, name), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+    className: "title"
+  }, title), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "stats"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "stat"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "stat-value"
+  }, projects), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "stat-label"
+  }, "Projects")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "stat"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "stat-value"
+  }, followers), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "stat-label"
+  }, "Followers")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "stat"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "stat-value"
+  }, following), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "stat-label"
+  }, "Following"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "bio"
+  }, bio), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "skills"
+  }, skills && skills.length > 0 ? skills.map((skill, index) => {
+    return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+      key: index,
+      className: "skill"
+    }, skill);
+  }) : null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "actions"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
+    className: "action-btn primary"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", null, "Follow"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "btn-effect"
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
+    className: "action-btn secondary"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", null, "Message"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "btn-effect"
+  }))))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "card-shine"
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "card-border"
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "card-glow"
+  })))));
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ProfileCard);
+
+/***/ }),
+
 /***/ "./src/style.scss":
 /*!************************!*\
   !*** ./src/style.scss ***!
@@ -212,22 +316,24 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./style.scss */ "./src/style.scss");
 /* harmony import */ var _Components_Common_Style__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Components/Common/Style */ "./src/Components/Common/Style.js");
 /* harmony import */ var _Components_Frontend_BlockName__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Components/Frontend/BlockName */ "./src/Components/Frontend/BlockName.js");
+/* harmony import */ var _Components_ProfileCard_ProfileCard__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Components/ProfileCard/ProfileCard */ "./src/Components/ProfileCard/ProfileCard.js");
 
 
 
 
 
-document.addEventListener('DOMContentLoaded', () => {
-  const blockNameEls = document.querySelectorAll('.wp-block-b-blocks-test-purpose');
+
+document.addEventListener("DOMContentLoaded", () => {
+  const blockNameEls = document.querySelectorAll(".wp-block-b-blocks-profile-card");
   blockNameEls.forEach(blockNameEl => {
     const attributes = JSON.parse(blockNameEl.dataset.attributes);
     (0,react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot)(blockNameEl).render((0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Components_Common_Style__WEBPACK_IMPORTED_MODULE_3__["default"], {
       attributes: attributes,
       id: blockNameEl.id
-    }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Components_Frontend_BlockName__WEBPACK_IMPORTED_MODULE_4__["default"], {
-      attributes: attributes
+    }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Components_ProfileCard_ProfileCard__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      attribute: attributes
     })));
-    blockNameEl?.removeAttribute('data-attributes');
+    blockNameEl?.removeAttribute("data-attributes");
   });
 });
 })();

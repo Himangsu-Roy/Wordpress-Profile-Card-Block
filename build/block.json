@@ -27,6 +27,34 @@
         "color": "black",
         "bg": "#B1C5A4"
       }
+    },
+    "name": {
+      "type": "string",
+      "default": "Sarah Anderson"
+    },
+    "title": {
+      "type": "string",
+      "default": "Senior Product Designer"
+    },
+    "stats": {
+      "type": "object",
+      "default": {
+        "projects": "1.2k",
+        "followers": "8.5k",
+        "following": "4.7k"
+      }
+    },
+    "bio": {
+      "type": "string",
+      "default": "Creative designer with 5+ years of experience in digital product design and brand identity."
+    },
+    "skills": {
+      "type": "array",
+      "default": [
+        "UI/UX",
+        "Branding",
+        "Motion"
+      ]
     }
   },
   "supports": {

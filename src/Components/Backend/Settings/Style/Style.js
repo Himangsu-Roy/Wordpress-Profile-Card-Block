@@ -1,7 +1,7 @@
 import { __ } from "@wordpress/i18n";
 import { __experimentalGrid as Grid, PanelBody } from "@wordpress/components";
 
-const Style = () => {
+const Style = ({attribute, setAttribute}) => {
   return (
     <>
       <PanelBody
@@ -9,7 +9,7 @@ const Style = () => {
         title={__("Purpose", "b-blocks")}
         initialOpen={false}
       >
-        
+
       </PanelBody>
     </>
   );

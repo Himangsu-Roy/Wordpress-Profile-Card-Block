@@ -18,9 +18,11 @@ const General = ({ attributes, setAttributes }) => {
   return (
     <PanelBody
       className="bPlPanelBody"
-      title={__("Purpose", "b-blocks")}
+      title={__("Card", "b-blocks")}
       initialOpen={false}
-    ></PanelBody>
+    >
+      
+    </PanelBody>
   );
 };
 

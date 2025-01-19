@@ -1,19 +1,25 @@
-import { createRoot } from 'react-dom/client';
-import './style.scss';
-import Style from './Components/Common/Style';
-import BlockName from './Components/Frontend/BlockName';
+import { createRoot } from "react-dom/client";
+import "./style.scss";
+import Style from "./Components/Common/Style";
+import BlockName from "./Components/Frontend/BlockName";
+import ProfileCard from "./Components/ProfileCard/ProfileCard";
 
-document.addEventListener('DOMContentLoaded', () => {
-	const blockNameEls = document.querySelectorAll('.wp-block-b-blocks-test-purpose');
-	blockNameEls.forEach(blockNameEl => {
-		const attributes = JSON.parse(blockNameEl.dataset.attributes);
+document.addEventListener("DOMContentLoaded", () => {
+  const blockNameEls = document.querySelectorAll(
+    ".wp-block-b-blocks-profile-card"
+  );
+  blockNameEls.forEach((blockNameEl) => {
+    const attributes = JSON.parse(blockNameEl.dataset.attributes);
 
-		createRoot(blockNameEl).render(<>
-			<Style attributes={attributes} id={blockNameEl.id} />
+    createRoot(blockNameEl).render(
+      <>
+        <Style attributes={attributes} id={blockNameEl.id} />
 
-			<BlockName attributes={attributes} />
-		</>);
+        {/* <BlockName attributes={attributes} /> */}
+        <ProfileCard attribute={attributes} />
+      </>
+    );
 
-		blockNameEl?.removeAttribute('data-attributes');
-	});
+    blockNameEl?.removeAttribute("data-attributes");
+  });
 });

@@ -16,7 +16,7 @@ const Settings = ({ attributes, setAttributes }) => {
 				Need more block like this? Checkout the bundle ➡ <a href='https://wordpress.org/plugins/b-blocks' target='_blank' rel='noopener noreferrer'>B Blocks</a>
 			</div>
 
-			<TabPanel className='bPlTabPanel wp-block-b-blocks-test-purpose' activeClass='activeTab'
+			<TabPanel className='bPlTabPanel wp-block-b-blocks-profile-card' activeClass='activeTab'
 				tabs={generalStyleTabs}
 				onSelect={tabController}
 			>

@@ -123,6 +123,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _Settings_Settings__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Settings/Settings */ "./src/Components/Backend/Settings/Settings.js");
 /* harmony import */ var _Common_Style__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Common/Style */ "./src/Components/Common/Style.js");
+/* harmony import */ var _ProfileCard_ProfileCard__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../ProfileCard/ProfileCard */ "./src/Components/ProfileCard/ProfileCard.js");
+/* harmony import */ var _utils_data__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../utils/data */ "./src/utils/data.js");
+
+
 
 
 
@@ -144,14 +148,19 @@ const Edit = props => {
   const {
     purposeType
   } = attributes;
+  const id = `${_utils_data__WEBPACK_IMPORTED_MODULE_5__.prefix}-${clientId}`;
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Settings_Settings__WEBPACK_IMPORTED_MODULE_2__["default"], {
     attributes,
     setAttributes
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps)()
+    ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps)(),
+    id: id
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Common_Style__WEBPACK_IMPORTED_MODULE_3__["default"], {
     attributes: attributes,
-    id: `block-${clientId}`
+    id: id
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_ProfileCard_ProfileCard__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    attribute: attributes,
+    setAttributes: setAttributes
   })));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Edit);
@@ -199,7 +208,7 @@ const General = ({
 }) => {
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
     className: "bPlPanelBody",
-    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Purpose", "b-blocks"),
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Card", "b-blocks"),
     initialOpen: false
   });
 };
@@ -251,7 +260,7 @@ const Settings = ({
     target: "_blank",
     rel: "noopener noreferrer"
   }, "B Blocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.TabPanel, {
-    className: "bPlTabPanel wp-block-b-blocks-test-purpose",
+    className: "bPlTabPanel wp-block-b-blocks-profile-card",
     activeClass: "activeTab",
     tabs: _utils_options__WEBPACK_IMPORTED_MODULE_5__.generalStyleTabs,
     onSelect: _bpl_tools_utils_functions__WEBPACK_IMPORTED_MODULE_4__.tabController
@@ -305,7 +314,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const Style = () => {
+const Style = ({
+  attribute,
+  setAttribute
+}) => {
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
     className: "bPlPanelBody",
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Purpose", "b-blocks"),
@@ -351,6 +363,124 @@ const Style = () => {
   });
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Style);
+
+/***/ }),
+
+/***/ "./src/Components/ProfileCard/ProfileCard.js":
+/*!***************************************************!*\
+  !*** ./src/Components/ProfileCard/ProfileCard.js ***!
+  \***************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+const ProfileCard = ({
+  attribute,
+  setAttribute
+}) => {
+  console.log(attribute);
+  const {
+    bio,
+    name,
+    title,
+    stats,
+    skills
+  } = attribute;
+  const {
+    followers,
+    following,
+    projects
+  } = stats;
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("body", null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "container"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "profile-card"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "card-content"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "avatar-wrapper"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "avatar"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "avatar-inner"
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "avatar-glow"
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "avatar-border"
+  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "profile-info"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
+    className: "name"
+  }, name), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+    className: "title"
+  }, title), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "stats"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "stat"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "stat-value"
+  }, projects), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "stat-label"
+  }, "Projects")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "stat"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "stat-value"
+  }, followers), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "stat-label"
+  }, "Followers")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "stat"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "stat-value"
+  }, following), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "stat-label"
+  }, "Following"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "bio"
+  }, bio), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "skills"
+  }, skills && skills.length > 0 ? skills.map((skill, index) => {
+    return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+      key: index,
+      className: "skill"
+    }, skill);
+  }) : null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "actions"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
+    className: "action-btn primary"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", null, "Follow"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "btn-effect"
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
+    className: "action-btn secondary"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", null, "Message"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "btn-effect"
+  }))))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "card-shine"
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "card-border"
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "card-glow"
+  })))));
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ProfileCard);
+
+/***/ }),
+
+/***/ "./src/utils/data.js":
+/*!***************************!*\
+  !*** ./src/utils/data.js ***!
+  \***************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   prefix: () => (/* binding */ prefix)
+/* harmony export */ });
+const prefix = "bBlocksProfileCard";
 
 /***/ }),
 
@@ -3038,7 +3168,7 @@ function castImmutable(value) {
   \************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"b-blocks/profile-card","version":"1.0.0","title":"Profile Card","category":"widgets","description":"Short description of the Test Purpose","keywords":["profile card","proifle","card"],"textdomain":"b-blocks","attributes":{"alignment":{"type":"string","default":"center"},"purposeType":{"type":"string","default":"test"},"colors":{"type":"object","default":{"color":"black","bg":"#B1C5A4"}}},"supports":{"align":["wide","full"],"html":false},"example":{"attributes":{}},"editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./view.css","render":"file:./render.php","viewScript":"file:./view.js"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"b-blocks/profile-card","version":"1.0.0","title":"Profile Card","category":"widgets","description":"Short description of the Test Purpose","keywords":["profile card","proifle","card"],"textdomain":"b-blocks","attributes":{"alignment":{"type":"string","default":"center"},"purposeType":{"type":"string","default":"test"},"colors":{"type":"object","default":{"color":"black","bg":"#B1C5A4"}},"name":{"type":"string","default":"Sarah Anderson"},"title":{"type":"string","default":"Senior Product Designer"},"stats":{"type":"object","default":{"projects":"1.2k","followers":"8.5k","following":"4.7k"}},"bio":{"type":"string","default":"Creative designer with 5+ years of experience in digital product design and brand identity."},"skills":{"type":"array","default":["UI/UX","Branding","Motion"]}},"supports":{"align":["wide","full"],"html":false},"example":{"attributes":{}},"editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./view.css","render":"file:./render.php","viewScript":"file:./view.js"}');
 
 /***/ })
 
