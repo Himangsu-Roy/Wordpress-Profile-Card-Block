@@ -1,13 +1,15 @@
 {
   "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 3,
-  "name": "b-blocks/test-purpose",
+  "name": "b-blocks/profile-card",
   "version": "1.0.0",
-  "title": "Tests",
+  "title": "Profile Card",
   "category": "widgets",
   "description": "Short description of the Test Purpose",
   "keywords": [
-    "Test Purpose"
+    "profile card",
+    "proifle",
+    "card"
   ],
   "textdomain": "b-blocks",
   "attributes": {

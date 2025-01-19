@@ -6,6 +6,6 @@ import Edit from './Components/Backend/Edit';
 import { blockIcon } from './utils/icons';
 
 registerBlockType(metadata, {
-	icon: blockIcon,
-	edit: Edit
+  icon: "admin-users",
+  edit: Edit,
 });

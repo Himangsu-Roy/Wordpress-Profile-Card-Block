@@ -1,7 +1,7 @@
 <?php
 /**
- * Plugin Name: Testing Form
- * Description: Short description of the plugin
+ * Plugin Name: Profile Card
+ * Description: Short description of the Profile Card
  * Version: 1.0.0
  * Author: bPlugins
  * Author URI: https://bplugins.com
@@ -33,5 +33,5 @@ if (! class_exists('PREFIXPlugin')) {
 			register_block_type(__DIR__ . '/build');
 		}
 	}
-	new PREFIXPlugin();        
+	new PREFIXPlugin();
 }
