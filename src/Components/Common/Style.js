@@ -1,19 +1,32 @@
 // import { getColorsCSS } from '../../../../Components/utils/getCSS';
 
-const Style = () => {
-	// const { colors } = attributes;
+const Style = ({ attributes }) => {
+  const { colors, styles } = attributes;
 
-	// const mainSl = `#${id}`;
-	// const blockSl = `${mainSl} .bBlocksTestPurpose`;
-	// ${blockSl} p{
-	// 	${getColorsCSS(colors)}
-	// }
+  const { cardBorderGradient } = styles;
 
-	return <style dangerouslySetInnerHTML={{
-		__html: `
+  console.log(attributes, "gradientType from styles");
+
+  // const mainSl = `#${id}`;
+  // const blockSl = `${mainSl} .bBlocksTestPurpose`;
+  // ${blockSl} p{
+  // 	${getColorsCSS(colors)}
+  // }
+
+  // background: ${gradientType}(${gradientAngle}, ${gradientColor1}, ${gradientColor2}) border-box;
+
+  return (
+    <style
+      dangerouslySetInnerHTML={{
+        __html: `
 		
-		
+		.card-border{
+		  background: ${cardBorderGradient} border-box;
+		}
 
-	`}} />;
-}
+	`,
+      }}
+    />
+  );
+};
 export default Style;

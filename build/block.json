@@ -62,6 +62,21 @@
         "Branding",
         "Motion"
       ]
+    },
+    "styles": {
+      "type": "object",
+      "properties": {
+        "cardBorderGradient": {
+          "type": "string"
+        },
+        "cardBorderColor": {
+          "type": "string"
+        }
+      },
+      "default": {
+        "cardBorderGradient": "linear-gradient(45deg, #60a5fa, #a78bfa) border-box",
+        "cardBorderColor": "#fff"
+      }
     }
   },
   "supports": {
