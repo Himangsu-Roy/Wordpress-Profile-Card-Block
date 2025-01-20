@@ -1,5 +1,6 @@
 import { __ } from "@wordpress/i18n";
 import { __experimentalGrid as Grid, PanelBody } from "@wordpress/components";
+import { ColorsControl } from "../../../../../../bpl-tools/Components";
 
 const Style = ({attribute, setAttribute}) => {
   return (

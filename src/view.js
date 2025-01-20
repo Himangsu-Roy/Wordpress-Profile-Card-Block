@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <Style attributes={attributes} id={blockNameEl.id} />
 
         {/* <BlockName attributes={attributes} /> */}
-        <ProfileCard attribute={attributes} />
+        <ProfileCard attributes={attributes} />
       </>
     );
 

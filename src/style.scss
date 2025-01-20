@@ -69,6 +69,25 @@ $primaryColor: #4527a4;
     opacity: 0.8;
   }
 
+  .avatar-image {
+    position: absolute;
+    border-radius: 50%;
+
+    width: 120px; /* Set the desired width */
+    height: 120px; /* Set the desired height */
+    overflow: hidden; /* Ensures the image doesn't overflow */
+    border-radius: 50%; /* Makes it circular */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .avatar-image img {
+    width: 100%; /* Ensures the image fills the container */
+    height: 100%; /* Ensures the image fills the container */
+    object-fit: cover; /* Scales the image to fill the container without distortion */
+  }
+
   .avatar-glow {
     position: absolute;
     inset: -2px;

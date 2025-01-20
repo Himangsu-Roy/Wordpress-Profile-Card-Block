@@ -1,5 +1,5 @@
 import { useBlockProps } from "@wordpress/block-editor";
-
+import { useState } from "react";
 import Settings from "./Settings/Settings";
 import Style from "../Common/Style";
 import ProfileCard from "../ProfileCard/ProfileCard";
@@ -16,15 +16,20 @@ const Edit = (props) => {
   const { attributes, setAttributes, clientId } = props;
   const { purposeType } = attributes;
   const id = `${prefix}-${clientId}`;
+  const [selectedSkillIndex, setSelectedSkillIndex] = useState(null);
 
   return (
     <>
-      <Settings {...{ attributes, setAttributes }} />
+      <Settings {...{ attributes, setAttributes, selectedSkillIndex }} />
 
       <div {...useBlockProps()} id={id}>
         <Style attributes={attributes} id={id} />
 
-        <ProfileCard attribute={attributes} setAttributes={setAttributes} />
+        <ProfileCard
+          setSelectedSkillIndex={setSelectedSkillIndex}
+          attributes={attributes}
+          setAttributes={setAttributes}
+        />
       </div>
     </>
   );

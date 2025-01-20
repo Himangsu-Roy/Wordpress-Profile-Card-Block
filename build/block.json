@@ -28,6 +28,13 @@
         "bg": "#B1C5A4"
       }
     },
+    "profileImage": {
+      "type": "object",
+      "default": {
+        "url": "",
+        "alt": "Profile Image"
+      }
+    },
     "name": {
       "type": "string",
       "default": "Sarah Anderson"
