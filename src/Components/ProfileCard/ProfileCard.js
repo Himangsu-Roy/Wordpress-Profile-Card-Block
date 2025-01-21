@@ -3,7 +3,12 @@ import { useState } from "react";
 import Settings from "../Backend/Settings/Settings";
 import { RichText } from "@wordpress/block-editor";
 
-const ProfileCard = ({ attributes, setAttributes, setSelectedSkillIndex }) => {
+const ProfileCard = ({
+  attributes,
+  selectedSkillIndex,
+  setAttributes,
+  setSelectedSkillIndex,
+}) => {
   // const [selectedSkillIndex, setSelectedSkillIndex] = useState(null);
 
   const {
@@ -40,10 +45,11 @@ const ProfileCard = ({ attributes, setAttributes, setSelectedSkillIndex }) => {
   return (
     <>
       {/* <Settings {...{ attributes, setAttributes, selectedSkillIndex }} />; */}
-      <body>
-        {cards.map((card, index) => {
+      {/* <body> */}
+      <div className="profile-card-wrapper">
+        {cards.map((card, idx) => {
           return (
-            <div key={index} className="container">
+            <div key={idx} className="container">
               <div className="profile-card">
                 <div className="card-content">
                   <div className="avatar-wrapper">
@@ -66,7 +72,7 @@ const ProfileCard = ({ attributes, setAttributes, setSelectedSkillIndex }) => {
                       value={card.name}
                       onChange={(newName) => {
                         const updateName = [...cards];
-                        newName[index].name = newName;
+                        newName[idx].name = newName;
                         setAttributes({ cards: updateName });
                       }}
                       placeholder="Profile Name"
@@ -78,7 +84,7 @@ const ProfileCard = ({ attributes, setAttributes, setSelectedSkillIndex }) => {
                       value={card.title}
                       onChange={(newTitle) => {
                         const updateTitle = [...cards];
-                        updateTitle[index].title = newTitle;
+                        updateTitle[idx].title = newTitle;
                         setAttributes({ cards: updateTitle });
                       }}
                       placeholder="Profile Title"
@@ -95,7 +101,7 @@ const ProfileCard = ({ attributes, setAttributes, setSelectedSkillIndex }) => {
                           value={card.stats.projects}
                           onChange={(newProject) => {
                             const newCards = [...cards];
-                            newCards[index].stats.projects = newProject;
+                            newCards[idx].stats.projects = newProject;
                             setAttributes({ cards: newCards });
 
                             // setAttributes({
@@ -112,45 +118,139 @@ const ProfileCard = ({ attributes, setAttributes, setSelectedSkillIndex }) => {
                           tagName="span"
                           value={card.statLabel.projects}
                           onChange={(newProjectLabel) => {
-                            setAttributes({
-                              statLabel: {
-                                ...statLabel,
-                                projects: newProjectLabel,
-                              },
-                            });
+                            const newCards = [...cards];
+                            newCards[idx].statLabel.projects = newProjectLabel;
+                            setAttributes({ cards: newCards });
                           }}
                           placeholder="Change Projects"
                         />
                       </div>
                       <div className="stat">
-                        <span className="stat-value">
+                        {/* <span className="stat-value">
                           {card.stats.followers}
-                        </span>
-                        <span className="stat-label">
+                        </span> */}
+                        <RichText
+                          className="stat-value"
+                          tagName="span"
+                          value={card.stats.followers}
+                          onChange={(newFollower) => {
+                            const newCards = [...cards];
+                            newCards[idx].stats.followers = newFollower;
+                            setAttributes({ cards: newCards });
+                          }}
+                          placeholder="Followers"
+                        />
+                        {/* <span className="stat-label">
                           {card.statLabel.followers}
-                        </span>
+                        </span> */}
+
+                        <RichText
+                          className="stat-label"
+                          tagName="span"
+                          value={card.statLabel.followers}
+                          onChange={(newFollowerLabel) => {
+                            const newCards = [...cards];
+                            newCards[idx].statLabel.followers =
+                              newFollowerLabel;
+                            setAttributes({ cards: newCards });
+                          }}
+                          placeholder="Change Followers"
+                        />
                       </div>
+
                       <div className="stat">
-                        <span className="stat-value">
+                        {/* <span className="stat-value">
                           {card.stats.following}
-                        </span>
-                        <span className="stat-label">
+                        </span> */}
+                        <RichText
+                          className="stat-value"
+                          tagName="span"
+                          value={card.stats.following}
+                          onChange={(newFollowing) => {
+                            const newCards = [...cards];
+                            newCards[idx].stats.following = newFollowing;
+                            setAttributes({ cards: newCards });
+                          }}
+                          placeholder="Following"
+                        />
+                        {/* <span className="stat-label">
                           {card.statLabel.following}
-                        </span>
+                        </span> */}
+                        <RichText
+                          className="stat-label"
+                          tagName="span"
+                          value={card.statLabel.following}
+                          onChange={(newFollowingLabel) => {
+                            const newCards = [...cards];
+                            newCards[idx].statLabel.following =
+                              newFollowingLabel;
+                            setAttributes({ cards: newCards });
+                          }}
+                          placeholder="Change Following"
+                        />
                       </div>
                     </div>
 
-                    <div className="bio">{card.bio}</div>
+                    {/* <div className="bio">{card.bio}</div> */}
 
-                    <div className="skills">
+                    <RichText
+                      className="bio"
+                      tagName="div"
+                      value={card.bio}
+                      onChange={(newBio) => {
+                        const newCards = [...cards];
+                        newCards[idx].bio = newBio;
+                        setAttributes({ cards: newCards });
+                      }}
+                      placeholder="Write Your Bio"
+                    />
+
+                    {/* Skills */}
+                    {/* <div className="skills">
                       {card.skills.map((skill, index) => (
-                        <span
+                        // <span
+                        //   key={index}
+                        //   className="skill"
+                        //   onClick={() => selectedSkill(index)}
+                        // >
+                        //   {skill}
+                        // </span>
+                        <RichText
+                          onClick={() => selectedSkill(index)}
                           key={index}
                           className="skill"
-                          onClick={() => selectedSkill(index)}
-                        >
-                          {skill}
-                        </span>
+                          tagName="span"
+                          value={skill}
+                          onChange={(newSkill) => {
+                            const newSkills = [...cards];
+                            newSkills[index].skills[selectedSkillIndex] =
+                              newSkill;
+                            setAttributes({ cards: newSkills });
+                          }}
+                          placeholder="Write Your Skills"
+                        />
+                      ))}
+                    </div> */}
+
+                    {/* Skills */}
+                    <div className="skills">
+                      {card.skills.map((skill, index) => (
+                        <RichText
+                          key={index}
+                          className={`skill ${
+                            selectedSkillIndex === index ? "selected" : ""
+                          }`} // Highlight selected skill
+                          tagName="span"
+                          value={skill}
+                          onClick={() => selectedSkill(index)} // Track the selected skill
+                          onChange={(newSkill) => {
+                            const updatedCards = [...cards];
+                            updatedCards[idx].skills[selectedSkillIndex] =
+                              newSkill; // Update the specific skill
+                            setAttributes({ cards: updatedCards }); // Update block attributes
+                          }}
+                          placeholder="Write Your Skills"
+                        />
                       ))}
                     </div>
 
@@ -232,7 +332,7 @@ const ProfileCard = ({ attributes, setAttributes, setSelectedSkillIndex }) => {
                           },
                         });
                       }}
-                      placeholder="Change Projects"
+                      placeholder="Projects Name"
                     />
                   </div>
                   <div className="stat">
@@ -430,7 +530,8 @@ const ProfileCard = ({ attributes, setAttributes, setSelectedSkillIndex }) => {
             <div className="card-glow"></div>
           </div>
         </div>
-      </body>
+      </div>
+      {/* </body> */}
     </>
   );
 };

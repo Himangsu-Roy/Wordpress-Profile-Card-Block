@@ -13,19 +13,29 @@ $primaryColor: #4527a4;
   body {
     min-height: 100vh;
     // display: flex;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(135deg, #0f172a, #1e293b);
+    // justify-content: center;
+    // align-items: center;
+    // background: linear-gradient(135deg, #0f172a, #1e293b);
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     color: white;
     padding: 2rem;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    // display: grid;
+    // grid-template-columns: 1fr 1fr 1fr;
+    // display: flex;
+    // flex-wrap: wrap; /* Allow wrapping to a new row */
+    // gap: 16px;
+  }
+
+  .profile-card-wrapper {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 16px;
   }
 
   .container {
     width: 100%;
     max-width: 400px;
+    flex: 1 1 calc(33.33% - 16px);
   }
 
   /* Profile Card */

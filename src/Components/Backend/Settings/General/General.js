@@ -419,7 +419,7 @@ const General = ({ attributes, setAttributes, selectedSkillIndex }) => {
               <InputControl
                 label="Profile Title"
                 labelPosition="top"
-                value={title}
+                value={card.title}
                 onChange={(newTitle) => {
                   const newCards = [...cards];
                   newCards[index].title = newTitle;
@@ -434,20 +434,22 @@ const General = ({ attributes, setAttributes, selectedSkillIndex }) => {
               <InputControl
                 label="Projects"
                 labelPosition="top"
-                value={changeProjects}
+                value={card.stats.projects}
                 onChange={(newProject) => {
-                  
-                  setAttributes({
-                    statLabel: { ...statLabel, projects: newProject },
-                  });
+                  const newCards = [...cards];
+                  newCards[index].stats.projects = newProject;
+                  setAttributes({ cards: newCards });
                 }}
               />
               <InputControl
                 label="Projects"
                 labelPosition="top"
-                value={projects}
+                value={card.statLabel.projects}
                 onChange={(newProject) => {
-                  setAttributes({ stats: { ...stats, projects: newProject } });
+                  const newCards = [...cards];
+                  newCards[index].statLabel.projects = newProject;
+                  setAttributes({ cards: newCards });
+                  // setAttributes({ stats: { ...stats, projects: newProject } });
                 }}
               />
 
@@ -457,22 +459,28 @@ const General = ({ attributes, setAttributes, selectedSkillIndex }) => {
               <InputControl
                 label="Followers"
                 labelPosition="top"
-                value={changeFollowers}
+                value={card.stats.followers}
                 onChange={(newFollower) => {
-                  setAttributes({
-                    statLabel: { ...statLabel, followers: newFollower },
-                  });
+                  const newCards = [...cards];
+                  newCards[index].stats.followers = newFollower;
+                  setAttributes({ cards: newCards });
+                  // setAttributes({
+                  //   statLabel: { ...statLabel, followers: newFollower },
+                  // });
                 }}
                 placeholder="Followers"
               />
               <InputControl
                 label="Followers"
                 labelPosition="top"
-                value={followers}
+                value={card.statLabel.followers}
                 onChange={(newFollowers) => {
-                  setAttributes({
-                    stats: { ...stats, followers: newFollowers },
-                  });
+                  const newCards = [...cards];
+                  newCards[index].statLabel.followers = newFollowers;
+                  setAttributes({ cards: newCards });
+                  // setAttributes({
+                  //   stats: { ...stats, followers: newFollowers },
+                  // });
                 }}
               />
               <Spacer />
@@ -481,21 +489,27 @@ const General = ({ attributes, setAttributes, selectedSkillIndex }) => {
               <InputControl
                 label="Following"
                 labelPosition="top"
-                value={changeFollowing}
+                value={card.stats.following}
                 onChange={(newFollowing) => {
-                  setAttributes({
-                    statLabel: { ...statLabel, following: newFollowing },
-                  });
+                  const newCards = [...cards];
+                  newCards[index].stats.following = newFollowing;
+                  setAttributes({ cards: newCards });
+                  // setAttributes({
+                  //   statLabel: { ...statLabel, following: newFollowing },
+                  // });
                 }}
               />
               <InputControl
                 label="Following"
                 labelPosition="top"
-                value={following}
+                value={card.statLabel.following}
                 onChange={(newFollowing) => {
-                  setAttributes({
-                    stats: { ...stats, following: newFollowing },
-                  });
+                  const newCards = [...cards];
+                  newCards[index].statLabel.following = newFollowing;
+                  setAttributes({ cards: newCards });
+                  // setAttributes({
+                  //   stats: { ...stats, following: newFollowing },
+                  // });
                 }}
               />
               <Spacer />
@@ -504,9 +518,12 @@ const General = ({ attributes, setAttributes, selectedSkillIndex }) => {
               <TextareaControl
                 label="Bio"
                 labelPosition="top"
-                value={bio}
+                value={card.bio}
                 onChange={(newBio) => {
-                  setAttributes({ bio: newBio });
+                  const newCards = [...cards];
+                  newCards[index].bio = newBio;
+                  setAttributes({ cards: newCards });
+                  // setAttributes({ bio: newBio });
                 }}
                 placeholder="Write Your Bio"
               />
@@ -516,9 +533,13 @@ const General = ({ attributes, setAttributes, selectedSkillIndex }) => {
               <InputControl
                 label="Skills"
                 labelPosition="top"
-                value={skills}
+                value={card.skills[selectedSkillIndex]}
                 onChange={(newSkill) => {
-                  setAttributes({ skills: newSkill });
+                  const newSkills = [...card.skills];
+                  newSkills[selectedSkillIndex] = newSkill;
+                  const newCards = [...cards];
+                  newCards[index].skills = newSkills;
+                  setAttributes({ cards: newCards });
                 }}
                 placeholder="Write Your Skills"
               />

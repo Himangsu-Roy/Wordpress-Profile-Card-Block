@@ -21,18 +21,19 @@
 }
 .wp-block-b-blocks-profile-card body {
   min-height: 100vh;
-  justify-content: center;
-  align-items: center;
-  background: linear-gradient(135deg, #0f172a, #1e293b);
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: white;
   padding: 2rem;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+}
+.wp-block-b-blocks-profile-card .profile-card-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
 }
 .wp-block-b-blocks-profile-card .container {
   width: 100%;
   max-width: 400px;
+  flex: 1 1 calc(33.33% - 16px);
 }
 .wp-block-b-blocks-profile-card .profile-card {
   position: relative;

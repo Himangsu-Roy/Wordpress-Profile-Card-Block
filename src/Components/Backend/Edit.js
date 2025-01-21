@@ -29,6 +29,7 @@ const Edit = (props) => {
           setSelectedSkillIndex={setSelectedSkillIndex}
           attributes={attributes}
           setAttributes={setAttributes}
+          selectedSkillIndex={selectedSkillIndex}
         />
       </div>
     </>
