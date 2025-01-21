@@ -6,9 +6,32 @@ import { RichText } from "@wordpress/block-editor";
 const ProfileCard = ({ attributes, setAttributes, setSelectedSkillIndex }) => {
   // const [selectedSkillIndex, setSelectedSkillIndex] = useState(null);
 
-  const { bio, name, title, stats, skills, profileImage } = attributes;
+  const {
+    bio,
+    name,
+    title,
+    stats,
+    skills,
+    profileImage,
+    nameSelectTag,
+    statLabel,
+    message,
+    follow,
+    cards,
+  } = attributes;
+
+  console.log(cards, "cards from ProfileCard");
 
   const { followers, following, projects } = stats;
+  const { text: messageText, link: messageLink } = message;
+  const { text: followText, link: followLink } = follow;
+
+  console.log(messageText, "messageText");
+  const {
+    projects: changeProjects,
+    followers: changeFollowers,
+    following: changeFollowing,
+  } = statLabel;
 
   const selectedSkill = (index) => {
     setSelectedSkillIndex(index);
@@ -18,6 +41,133 @@ const ProfileCard = ({ attributes, setAttributes, setSelectedSkillIndex }) => {
     <>
       {/* <Settings {...{ attributes, setAttributes, selectedSkillIndex }} />; */}
       <body>
+        {cards.map((card, index) => {
+          return (
+            <div key={index} className="container">
+              <div className="profile-card">
+                <div className="card-content">
+                  <div className="avatar-wrapper">
+                    <div className="avatar">
+                      <div className="avatar-inner">
+                        <div className="avatar-image">
+                          <img src={card.profileImage.url} />
+                        </div>
+                      </div>
+                      <div className="avatar-glow"></div>
+                      <div className="avatar-border"></div>
+                    </div>
+                  </div>
+
+                  <div className="profile-info">
+                    {/* <h2 className="name">{card.name}</h2> */}
+                    <RichText
+                      className="name"
+                      tagName={card.nameSelectTag}
+                      value={card.name}
+                      onChange={(newName) => {
+                        const updateName = [...cards];
+                        newName[index].name = newName;
+                        setAttributes({ cards: updateName });
+                      }}
+                      placeholder="Profile Name"
+                    />
+                    {/* <p className="title">{card.title}</p> */}
+                    <RichText
+                      className="title"
+                      tagName="p"
+                      value={card.title}
+                      onChange={(newTitle) => {
+                        const updateTitle = [...cards];
+                        updateTitle[index].title = newTitle;
+                        setAttributes({ cards: updateTitle });
+                      }}
+                      placeholder="Profile Title"
+                    />
+
+                    <div className="stats">
+                      <div className="stat">
+                        {/* <span className="stat-value">
+                          {card.stats.projects}
+                        </span> */}
+                        <RichText
+                          className="stat-value"
+                          tagName="span"
+                          value={card.stats.projects}
+                          onChange={(newProject) => {
+                            const newCards = [...cards];
+                            newCards[index].stats.projects = newProject;
+                            setAttributes({ cards: newCards });
+
+                            // setAttributes({
+                            //   stats: { ...stats, projects: newProject },
+                            // });
+                          }}
+                          placeholder="Projects"
+                        />
+                        {/* <span className="stat-label">
+                          {card.statLabel.projects}
+                        </span> */}
+                        <RichText
+                          className="stat-label"
+                          tagName="span"
+                          value={card.statLabel.projects}
+                          onChange={(newProjectLabel) => {
+                            setAttributes({
+                              statLabel: {
+                                ...statLabel,
+                                projects: newProjectLabel,
+                              },
+                            });
+                          }}
+                          placeholder="Change Projects"
+                        />
+                      </div>
+                      <div className="stat">
+                        <span className="stat-value">
+                          {card.stats.followers}
+                        </span>
+                        <span className="stat-label">
+                          {card.statLabel.followers}
+                        </span>
+                      </div>
+                      <div className="stat">
+                        <span className="stat-value">
+                          {card.stats.following}
+                        </span>
+                        <span className="stat-label">
+                          {card.statLabel.following}
+                        </span>
+                      </div>
+                    </div>
+
+                    <div className="bio">{card.bio}</div>
+
+                    <div className="skills">
+                      {card.skills.map((skill, index) => (
+                        <span
+                          key={index}
+                          className="skill"
+                          onClick={() => selectedSkill(index)}
+                        >
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
+
+                    <div className="actions">
+                      <a href={card.message.link} className="message">
+                        {card.message.text}
+                      </a>
+                      <a href={card.follow.link} className="follow">
+                        {card.follow.text}
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          );
+        })}
         <div className="container">
           <div className="profile-card">
             <div className="card-content">
@@ -37,7 +187,7 @@ const ProfileCard = ({ attributes, setAttributes, setSelectedSkillIndex }) => {
                 {/* <h2 className="name">{name}</h2> */}
                 <RichText
                   className="name"
-                  tagName="h2"
+                  tagName={nameSelectTag}
                   value={name}
                   onChange={(newName) => {
                     setAttributes({ name: newName });
@@ -69,7 +219,21 @@ const ProfileCard = ({ attributes, setAttributes, setSelectedSkillIndex }) => {
                       }}
                       placeholder="Projects"
                     />
-                    <span className="stat-label">Projects</span>
+                    {/* <span className="stat-label">Projects</span> */}
+                    <RichText
+                      className="stat-label"
+                      tagName="span"
+                      value={changeProjects}
+                      onChange={(newChangeProject) => {
+                        setAttributes({
+                          statLabel: {
+                            ...statLabel,
+                            projects: newChangeProject,
+                          },
+                        });
+                      }}
+                      placeholder="Change Projects"
+                    />
                   </div>
                   <div className="stat">
                     {/* <span className="stat-value">{followers}</span> */}
@@ -84,7 +248,22 @@ const ProfileCard = ({ attributes, setAttributes, setSelectedSkillIndex }) => {
                       }}
                       placeholder="Followers"
                     />
-                    <span className="stat-label">Followers</span>
+                    {/* <span className="stat-label">Followers</span> */}
+                    <RichText
+                      className="stat-label"
+                      tagName="span"
+                      value={changeFollowers}
+                      onChange={(newChangeFollower) => {
+                        setAttributes({
+                          statLabel: {
+                            ...statLabel,
+                            followers: newChangeFollower,
+                          },
+                        });
+                      }}
+                      placeholder="Change Followers"
+                      // style={{ marginLeft: "5px" }}
+                    />
                   </div>
                   <div className="stat">
                     {/* <span className="stat-value">{following}</span> */}
@@ -99,7 +278,21 @@ const ProfileCard = ({ attributes, setAttributes, setSelectedSkillIndex }) => {
                       }}
                       placeholder="Following"
                     />
-                    <span className="stat-label">Following</span>
+                    {/* <span className="stat-label">Following</span> */}
+                    <RichText
+                      className="stat-label"
+                      tagName="span"
+                      value={changeFollowing}
+                      onChange={(newChangeFollowing) => {
+                        setAttributes({
+                          statLabel: {
+                            ...statLabel,
+                            following: newChangeFollowing,
+                          },
+                        });
+                      }}
+                      placeholder="Change Following"
+                    />
                   </div>
                 </div>
 
@@ -147,11 +340,85 @@ const ProfileCard = ({ attributes, setAttributes, setSelectedSkillIndex }) => {
 
                 <div className="actions">
                   <button className="action-btn primary">
-                    <span>Follow</span>
+                    {/* <span>Follow</span>
+                    <RichText
+                      className="follow"
+                      tagName="span"
+                      value={followText}
+                      onChange={(newFollow) => {
+                        setAttributes({
+                          follow: { ...follow, followText: newFollow },
+                        });
+                      }}
+                      placeholder="Follow"
+                    /> */}
+
+                    {followText && (
+                      <a
+                        href={followLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <RichText
+                          className="message"
+                          tagName="span"
+                          value={followText}
+                          onChange={(newfollow) => {
+                            setAttributes({
+                              follow: { ...follow, followText: newfollow },
+                            });
+                          }}
+                          placeholder="Enter button name"
+                        />
+                      </a>
+                    )}
                     <div className="btn-effect"></div>
                   </button>
                   <button className="action-btn secondary">
-                    <span>Message</span>
+                    {/* <span>Message</span> */}
+                    {/* <RichText
+                      className="message"
+                      tagName="span"
+                      value={messageText}
+                      onChange={(newMessage) => {
+                        setAttributes({
+                          message: { ...message, messageText: newMessage },
+                        });
+                      }}
+                      placeholder="Message"
+                    /> */}
+                    {/* <RichText
+                      className="message"
+                      tagName="span"
+                      value={messageText}
+                      onChange={(newMessage) => {
+                        setAttributes({
+                          message: { ...message, messageText: newMessage },
+                        });
+                      }}
+                      placeholder="Enter button name"
+                    /> */}
+
+                    {messageText && (
+                      <a
+                        href={messageLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <RichText
+                          className="message"
+                          tagName="span"
+                          value={messageText}
+                          onChange={(newMessage) => {
+                            setAttributes({
+                              message: { ...message, messageText: newMessage },
+                            });
+                          }}
+                          placeholder="Enter button name"
+                        />
+                      </a>
+                    )}
+
                     <div className="btn-effect"></div>
                   </button>
                 </div>

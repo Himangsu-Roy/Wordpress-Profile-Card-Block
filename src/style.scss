@@ -12,13 +12,15 @@ $primaryColor: #4527a4;
 
   body {
     min-height: 100vh;
-    display: flex;
+    // display: flex;
     justify-content: center;
     align-items: center;
     background: linear-gradient(135deg, #0f172a, #1e293b);
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     color: white;
     padding: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
   }
 
   .container {
@@ -30,9 +32,9 @@ $primaryColor: #4527a4;
   .profile-card {
     position: relative;
     padding: 2.5rem;
-    background: rgba(30, 41, 59, 0.8);
+    // background: rgba(30, 41, 59, 0.8);
     backdrop-filter: blur(10px);
-    border-radius: 1.5rem;
+    // border-radius: 1.5rem;
     overflow: hidden;
     transition: transform 0.3s ease;
   }
@@ -107,7 +109,7 @@ $primaryColor: #4527a4;
     inset: 0;
     border: 3px solid transparent;
     border-radius: 50%;
-    background: linear-gradient(45deg, #60a5fa, #a78bfa) border-box;
+    // background: linear-gradient(45deg, #60a5fa, #a78bfa) border-box;
     -webkit-mask:
       linear-gradient(#fff 0 0) padding-box,
       linear-gradient(#fff 0 0);
@@ -121,9 +123,9 @@ $primaryColor: #4527a4;
   }
 
   .name {
-    font-size: 1.8rem;
+    // font-size: 1.8rem;
     margin-bottom: 0.5rem;
-    background: linear-gradient(to right, #60a5fa, #a78bfa);
+    // background: linear-gradient(to right, #60a5fa, #a78bfa);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
@@ -153,7 +155,7 @@ $primaryColor: #4527a4;
   .stat-value {
     font-size: 1.2rem;
     font-weight: bold;
-    background: linear-gradient(to right, #60a5fa, #a78bfa);
+    // background: linear-gradient(to right, #60a5fa, #a78bfa);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
@@ -177,6 +179,7 @@ $primaryColor: #4527a4;
     gap: 0.8rem;
     justify-content: center;
     margin-bottom: 2rem;
+    flex-wrap: wrap;
   }
 
   .skill {
@@ -280,7 +283,7 @@ $primaryColor: #4527a4;
     position: absolute;
     inset: 0;
     border: 2px solid transparent;
-    border-radius: 1.5rem;
+    // border-radius: 1.5rem;
     // background: linear-gradient(45deg, #60a5fa, #a78bfa) border-box;
     -webkit-mask:
       linear-gradient(#fff 0 0) padding-box,
@@ -299,7 +302,7 @@ $primaryColor: #4527a4;
     position: absolute;
     inset: 0;
     background: linear-gradient(45deg, #60a5fa, #a78bfa);
-    border-radius: 1.5rem;
+    // border-radius: 1.5rem;
     opacity: 0;
     filter: blur(20px);
     transition: opacity 0.3s ease;
@@ -325,7 +328,7 @@ $primaryColor: #4527a4;
     }
 
     .name {
-      font-size: 1.5rem;
+      // font-size: 1.5rem;
     }
 
     .skills {

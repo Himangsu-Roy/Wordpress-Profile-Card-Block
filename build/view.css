@@ -21,13 +21,14 @@
 }
 .wp-block-b-blocks-profile-card body {
   min-height: 100vh;
-  display: flex;
   justify-content: center;
   align-items: center;
   background: linear-gradient(135deg, #0f172a, #1e293b);
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: white;
   padding: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 .wp-block-b-blocks-profile-card .container {
   width: 100%;
@@ -36,10 +37,8 @@
 .wp-block-b-blocks-profile-card .profile-card {
   position: relative;
   padding: 2.5rem;
-  background: rgba(30, 41, 59, 0.8);
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
-  border-radius: 1.5rem;
   overflow: hidden;
   transition: transform 0.3s ease;
 }
@@ -103,7 +102,6 @@
   inset: 0;
   border: 3px solid transparent;
   border-radius: 50%;
-  background: linear-gradient(45deg, #60a5fa, #a78bfa) border-box;
   -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: destination-out;
   mask-composite: exclude;
@@ -112,9 +110,7 @@
   text-align: center;
 }
 .wp-block-b-blocks-profile-card .name {
-  font-size: 1.8rem;
   margin-bottom: 0.5rem;
-  background: linear-gradient(to right, #60a5fa, #a78bfa);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -139,7 +135,6 @@
 .wp-block-b-blocks-profile-card .stat-value {
   font-size: 1.2rem;
   font-weight: bold;
-  background: linear-gradient(to right, #60a5fa, #a78bfa);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -158,6 +153,7 @@
   gap: 0.8rem;
   justify-content: center;
   margin-bottom: 2rem;
+  flex-wrap: wrap;
 }
 .wp-block-b-blocks-profile-card .skill {
   padding: 0.5rem 1rem;
@@ -239,7 +235,6 @@
   position: absolute;
   inset: 0;
   border: 2px solid transparent;
-  border-radius: 1.5rem;
   -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: destination-out;
   mask-composite: exclude;
@@ -253,7 +248,6 @@
   position: absolute;
   inset: 0;
   background: linear-gradient(45deg, #60a5fa, #a78bfa);
-  border-radius: 1.5rem;
   opacity: 0;
   filter: blur(20px);
   transition: opacity 0.3s ease;
@@ -271,9 +265,6 @@
   .wp-block-b-blocks-profile-card .avatar-wrapper {
     width: 100px;
     height: 100px;
-  }
-  .wp-block-b-blocks-profile-card .name {
-    font-size: 1.5rem;
   }
   .wp-block-b-blocks-profile-card .skills {
     flex-wrap: wrap;

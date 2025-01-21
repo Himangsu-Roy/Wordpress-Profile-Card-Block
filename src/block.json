@@ -47,6 +47,14 @@
         "following": "4.7k"
       }
     },
+    "statLabel": {
+      "type": "object",
+      "default": {
+        "projects": "Projects",
+        "followers": "Followers",
+        "following": "Following"
+      }
+    },
     "bio": {
       "type": "string",
       "default": "Creative designer with 5+ years of experience in digital product design and brand identity."
@@ -54,6 +62,20 @@
     "skills": {
       "type": "array",
       "default": ["UI/UX", "Branding", "Motion"]
+    },
+    "follow": {
+      "type": "object",
+      "default": {
+        "text": "Follow",
+        "link": "www.google.com"
+      }
+    },
+    "message": {
+      "type": "object",
+      "default": {
+        "text": "Message",
+        "link": "www.google.com"
+      }
     },
     "styles": {
       "type": "object",
@@ -63,12 +85,119 @@
         },
         "cardBorderColor": {
           "type": "string"
+        },
+        "avatarBorderGradient": {
+          "type": "string"
+        },
+        "textContentGradient": {
+          "type": "string"
         }
       },
       "default": {
         "cardBorderGradient": "linear-gradient(45deg, #60a5fa, #a78bfa) border-box",
-        "cardBorderColor": "#fff"
+        "cardBorderColor": "#fff",
+        "avatarBorderGradient": "linear-gradient(45deg, #60a5fa, #a78bfa) border-box",
+        "textContentGradient": "linear-gradient(45deg, #60a5fa, #a78bfa) border-box"
       }
+    },
+    "backgroundColor": {
+      "type": "string",
+      "default": "rgba(30, 41, 59, 0.8)"
+    },
+    "alpha": {
+      "type": "number",
+      "default": 0.8
+    },
+    "cardLayout": {
+      "type": "object",
+      "borderRadius": {
+        "type": "string"
+      },
+      "bgColor": {
+        "type": "string"
+      },
+      "default": {
+        "borderRadius": {
+          "top": "20px",
+          "right": "20px",
+          "bottom": "20px",
+          "left": "20px"
+        },
+        "bgColor": {
+          "bg": "#B1C5A4",
+          "alpha": "0.8"
+        }
+      }
+    },
+    "nameSelectTag": {
+      "type": "string",
+      "default": "h1"
+    },
+    "nameFontFamily": {
+      "type": "string",
+      "default": "Arial, sans-serif"
+    },
+    "nameFontSize": {
+      "type": "string",
+      "default": "16px"
+    },
+    "nameFontWeight": {
+      "type": "string",
+      "default": "normal"
+    },
+    "nameLetterSpacing": {
+      "type": "string",
+      "default": ""
+    },
+    "nameLineHeight": {
+      "type": "string",
+      "default": ""
+    },
+    "nameTextTrasform": {
+      "type": "string",
+      "default": ""
+    },
+    "nameFontStyle": {
+      "type": "string",
+      "default": ""
+    },
+    "titleFontFamily": {
+      "type": "string",
+      "default": "Arial, sans-serif"
+    },
+    "titleFontSize": {
+      "type": "string",
+      "default": "16px"
+    },
+
+    "titleFontWeight": {
+      "type": "string",
+      "default": "normal"
+    },
+
+    "titleLetterSpacing": {
+      "type": "string",
+      "default": ""
+    },
+    "titleLineHeight": {
+      "type": "string",
+      "default": ""
+    },
+    "titleTextTrasform": {
+      "type": "string",
+      "default": ""
+    },
+    "titleFontStyle": {
+      "type": "string",
+      "default": ""
+    },
+    "textColor": {
+      "type": "string",
+      "default": "#94a3b8"
+    },
+    "cards": {
+      "type": "array",
+      "default": []
     }
   },
   "supports": {
