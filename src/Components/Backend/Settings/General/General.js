@@ -47,20 +47,29 @@ const General = ({ attributes, setAttributes, selectedSkillIndex }) => {
   const { text: followText, link: followLink } = follow;
 
   const handleSkillChange = (newSkill) => {
-    // Avoid empty skills
     if (newSkill.trim() === "") return;
 
     const newSkills = [...skills];
 
-    // Add new skill or update existing skill
     if (selectedSkillIndex != null) {
-      newSkills[selectedSkillIndex] = newSkill; // Update skill at selected index
+      newSkills[selectedSkillIndex] = newSkill;
     } else {
-      newSkills.push(newSkill); // Add new skill
+      newSkills.push(newSkill);
     }
 
     setAttributes({ skills: newSkills });
   };
+
+  function handleDuplicate(card, index) {
+    console.log(index, "image index");
+
+    const newItems = [
+      ...cards.slice(0, index + 1),
+      { ...card },
+      ...cards.slice(index + 1),
+    ];
+    setAttributes({ cards: newItems });
+  }
 
   return (
     <>
@@ -547,49 +556,63 @@ const General = ({ attributes, setAttributes, selectedSkillIndex }) => {
 
               {/* Message */}
               <InputControl
-                label="Message"
+                label={card.message.text}
                 labelPosition="top"
-                value={messageText}
+                value={card.message.text}
                 onChange={(newMessage) => {
-                  setAttributes({
-                    message: { ...message, text: newMessage },
-                  });
+                  const newCards = [...cards];
+                  newCards[index].message.text = newMessage;
+                  setAttributes({ cards: newCards });
+                  // setAttributes({
+                  //   message: { ...message, text: newMessage },
+                  // });
                 }}
                 placeholder="Enter button name"
               />
               <InputControl
-                label="Message"
+                label={`${card.message.text} Link`}
                 labelPosition="top"
-                value={messageLink}
+                value={card.message.link}
                 onChange={(newLink) => {
-                  setAttributes({
-                    message: { ...message, link: newLink },
-                  });
+                  const newCards = [...cards];
+                  newCards[index].message.link = newLink;
+                  setAttributes({ cards: newCards });
+
+                  // setAttributes({
+                  //   message: { ...message, link: newLink },
+                  // });
                 }}
                 placeholder="Enter button link"
               />
+
               <Spacer />
 
               {/* Follow */}
               <InputControl
-                label="Follow"
+                label={card.follow.text}
                 labelPosition="top"
                 value={followText}
                 onChange={(newFollow) => {
-                  setAttributes({
-                    follow: { ...follow, text: newFollow },
-                  });
+                  const newCards = [...cards];
+                  newCards[index].follow.text = newFollow;
+                  setAttributes({ cards: newCards });
+                  // setAttributes({
+                  //   follow: { ...follow, text: newFollow },
+                  // });
                 }}
                 placeholder="Enter button name"
               />
               <InputControl
-                label="Follow"
+                label={`${card.follow.text} Link`}
                 labelPosition="top"
                 value={followLink}
                 onChange={(newLink) => {
-                  setAttributes({
-                    follow: { ...follow, link: newLink },
-                  });
+                  const newCards = [...cards];
+                  newCards[index].follow.link = newLink;
+                  setAttributes({ cards: newCards });
+                  // setAttributes({
+                  //   follow: { ...follow, link: newLink },
+                  // });
                 }}
                 placeholder="Enter button link"
               />
@@ -605,7 +628,7 @@ const General = ({ attributes, setAttributes, selectedSkillIndex }) => {
                     justifyContent: "center",
                   }}
                   variant="secondary"
-                  // onClick={() => handleDuplicate(image, index)}
+                  onClick={() => handleDuplicate(card, index)}
                 >
                   Duplicate
                 </Button>
@@ -619,10 +642,8 @@ const General = ({ attributes, setAttributes, selectedSkillIndex }) => {
                   }}
                   variant="primary"
                   onClick={() => {
-                    // const newItems = images.filter((_, i) => i !== index);
-                    // setAttributes({
-                    //   images: newItems,
-                    // });
+                    const newItems = cards.filter((_, i) => i !== index);
+                    setAttributes({ cards: newItems });
                   }}
                 >
                   {__("Remove", "b-blocks")}

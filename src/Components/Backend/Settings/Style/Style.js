@@ -512,8 +512,8 @@ const Style = ({ attributes, setAttributes }) => {
                 <Spacer />
                 <ColorGradientControl
                   title={__("Card Border Gradient", "b-blocks")}
-                  colorValue={cardBorderColor}
-                  gradientValue={cardBorderGradient}
+                  colorValue={card.styles.cardBorderColor}
+                  gradientValue={card.styles.cardBorderGradient}
                   colors={[
                     { name: "red", color: "#f00" },
                     { name: "white", color: "#fff" },
@@ -542,13 +542,23 @@ const Style = ({ attributes, setAttributes }) => {
                   label={__("Choose a color or a gradient")}
                   onColorChange={(newValue) => {
                     console.log(newValue, "color change");
-                    setAttributes({ cardBorderColor: newValue });
+                    // const newCards = [...cards];
+                    // newCards[index].styles.cardBorderColor = newValue;
+                    // setAttributes({ cards: newCards });
+                    // setAttributes({ cardBorderColor: newValue });
                   }}
                   onGradientChange={(newValue) => {
                     console.log(newValue, "gradient change");
-                    setAttributes({
-                      styles: { ...styles, cardBorderGradient: newValue },
-                    });
+                    const newCards = [...cards];
+                    console.log(
+                      newCards[index].styles.cardBorderGradient,
+                      "newCards[index].styles"
+                    );
+                    newCards[index].styles.cardBorderGradient = newValue;
+                    setAttributes({ cards: newCards });
+                    // setAttributes({
+                    //   styles: { ...styles, cardBorderGradient: newValue },
+                    // });
                   }}
                 />
 
