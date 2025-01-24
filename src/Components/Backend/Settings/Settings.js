@@ -60,17 +60,17 @@ const Settings = ({ attributes, setAttributes, selectedSkillIndex }) => {
           describedBy={__("Block Name Alignment")}
           alignmentControls={[
             {
-              title: __("Block Name in left", "textdomain"),
+              title: __("Block Name in left", "b-blocks"),
               align: "left",
               icon: "align-left",
             },
             {
-              title: __("Block Name in center", "textdomain"),
+              title: __("Block Name in center", "b-blocks"),
               align: "center",
               icon: "align-center",
             },
             {
-              title: __("Block Name in right", "textdomain"),
+              title: __("Block Name in right", "b-blocks"),
               align: "right",
               icon: "align-right",
             },

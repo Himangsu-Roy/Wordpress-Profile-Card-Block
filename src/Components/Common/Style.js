@@ -125,120 +125,221 @@
 // };
 // export default Style;
 
+// const Style = ({ attributes }) => {
+//   const { cards = [] } = attributes; // Only rely on the cards array
+
+//   // Generate dynamic card-specific CSS
+//   const cardStyles = cards
+//     .map((card, index) => {
+//       const {
+//         styles = {},
+//         nameFontFamily = "Arial",
+//         nameFontSize = "16px",
+//         nameFontWeight = "normal",
+//         nameLetterSpacing = 0,
+//         nameLineHeight = 1.5,
+//         nameTextTransform = "none",
+//         nameFontStyle = "normal",
+//         titleFontFamily = "Arial",
+//         titleFontSize = "14px",
+//         titleFontWeight = "normal",
+//         titleLetterSpacing = 0,
+//         titleLineHeight = 1.5,
+//         titleTextTransform = "none",
+//         titleFontStyle = "normal",
+//         textColor = "#000",
+//         backgroundColor = "#ffffff",
+//         alpha = 1,
+//       } = card;
+
+//       const {
+//         cardBorderGradient = "transparent",
+//         avatarBorderGradient = "transparent",
+//         textContentGradient = "transparent",
+//         cardBorderColor,
+//       } = styles;
+
+//       // Convert hex to RGBA
+//       const rgbaColor =
+//         backgroundColor &&
+//         backgroundColor.startsWith("#") &&
+//         backgroundColor.length === 7
+//           ? `rgba(${parseInt(backgroundColor.slice(1, 3), 16)}, ${parseInt(
+//               backgroundColor.slice(3, 5),
+//               16
+//             )}, ${parseInt(backgroundColor.slice(5, 7), 16)}, ${alpha})`
+//           : backgroundColor;
+
+//       const cardBackground = cardBorderColor || rgbaColor;
+
+//       return `
+//         .profile-card-${index} {
+//           background: ${cardBackground};
+//           border-radius: ${styles.borderRadius || "0px"};
+//         }
+
+//         .profile-card-${index} .name {
+//           font-family: ${nameFontFamily};
+//           font-size: ${nameFontSize};
+//           font-weight: ${nameFontWeight};
+//           letter-spacing: ${nameLetterSpacing}px;
+//           line-height: ${nameLineHeight};
+//           text-transform: ${nameTextTransform};
+//           font-style: ${nameFontStyle};
+//           color: ${textColor};
+//         }
+
+//         .profile-card-${index} .title {
+//           font-family: ${titleFontFamily};
+//           font-size: ${titleFontSize};
+//           font-weight: ${titleFontWeight};
+//           letter-spacing: ${titleLetterSpacing}px;
+//           line-height: ${titleLineHeight};
+//           text-transform: ${titleTextTransform};
+//           font-style: ${titleFontStyle};
+//           color: ${textColor};
+//         }
+
+//         .profile-card-${index} .stat-label,
+//         .profile-card-${index} .bio,
+//         .profile-card-${index} .skill {
+//           color: ${textColor};
+//         }
+
+//         .profile-card-${index} .card-border {
+//           background: ${cardBorderGradient} border-box;
+//         }
+
+//         .profile-card-${index} .avatar-border {
+//           background: ${avatarBorderGradient} border-box;
+//         }
+
+//         .profile-card-${index} .stat-value {
+//           background: ${textContentGradient} border-box;
+//         }
+//       `;
+//     })
+//     .join("\n");
+
+//   return (
+//     <style
+//       dangerouslySetInnerHTML={{
+//         __html: `
+//           ${cardStyles} /* Dynamically generated card styles */
+//         `,
+//       }}
+//     />
+//   );
+// };
+
+// export default Style;
+
 const Style = ({ attributes }) => {
-  const {
-    colors,
-    nameFontWeight,
-    styles,
-    cardLayout,
-    nameFontFamily,
-    nameFontSize,
-    nameLetterSpacing,
-    nameLineHeight,
-    nameTextTrasform,
-    nameFontStyle,
-    titleFontFamily,
-    titleFontSize,
-    titleFontWeight,
-    titleLetterSpacing,
-    titleLineHeight,
-    titleTextTrasform,
-    titleFontStyle,
-    textColor,
-    backgroundColor,
-    alpha,
-    cards = [], // Default to an empty array to avoid errors
-  } = attributes;
-
-  // Convert hex to RGBA
-  const rgbaColor = `rgba(${parseInt(
-    backgroundColor.slice(1, 3),
-    16
-  )}, ${parseInt(backgroundColor.slice(3, 5), 16)}, ${parseInt(
-    backgroundColor.slice(5, 7),
-    16
-  )}, ${alpha})`;
-
-  const { cardBorderGradient, avatarBorderGradient, textContentGradient } =
-    styles;
-
-  const { borderRadius } = cardLayout;
+  const { cards = [] } = attributes; // Only rely on the cards array
 
   // Generate dynamic card-specific CSS
   const cardStyles = cards
     .map((card, index) => {
-      const { cardBorderGradient, avatarBorderGradient, textContentGradient } =
-        card.styles;
-      const cardBackground = card.styles?.cardBorderColor || rgbaColor;
-      const cardTextColor = card.textColor || textColor;
+      const {
+        styles = {},
+        nameFontFamily = "Arial",
+        nameFontSize = "16px",
+        nameFontWeight = "normal",
+        nameLetterSpacing = 0,
+        nameLineHeight = 1.5,
+        nameTextTransform = "none",
+        nameFontStyle = "normal",
+        titleFontFamily = "Arial",
+        titleFontSize = "14px",
+        titleFontWeight = "normal",
+        titleLetterSpacing = 0,
+        titleLineHeight = 1.5,
+        titleTextTransform = "none",
+        titleFontStyle = "normal",
+        textColor = "#000",
+        backgroundColor = "#ffffff",
+        alpha = 1,
+        cardLayout = {},
+      } = card;
+
+      const {
+        cardBorderGradient = "transparent",
+        avatarBorderGradient = "transparent",
+        textContentGradient = "transparent",
+        cardBorderColor,
+      } = styles;
+
+      console.log(avatarBorderGradient, " avatar border gradient");
+
+      const { borderRadius = "0px" } = cardLayout;
+
+      // Safely convert hex to RGBA
+      const rgbaColor =
+        typeof backgroundColor === "string" &&
+        backgroundColor.startsWith("#") &&
+        backgroundColor.length === 7
+          ? `rgba(${parseInt(backgroundColor.slice(1, 3), 16)}, ${parseInt(
+              backgroundColor.slice(3, 5),
+              16
+            )}, ${parseInt(backgroundColor.slice(5, 7), 16)}, ${alpha})`
+          : backgroundColor || "#ffffff"; // Default fallback to white
+
+      const cardBackground = cardBorderColor || rgbaColor;
 
       return `
         .profile-card-${index} {
-          background: ${cardBackground};  
-          border-radius: ${borderRadius.top} ${borderRadius.right} ${
-            borderRadius.bottom
-          } ${borderRadius.left};
+          background: ${cardBackground};
+          border-radius: ${borderRadius};
         }
 
         .profile-card-${index} .name {
-          font-family: ${card.nameFontFamily || nameFontFamily} !important;
-          font-size: ${card.nameFontSize || nameFontSize} !important;
-          font-weight: ${card.nameFontWeight || nameFontWeight} !important;
-          letter-spacing: ${
-            card.nameLetterSpacing || nameLetterSpacing
-          }px !important;
-          line-height: ${card.nameLineHeight || nameLineHeight} !important;
-          text-transform: ${
-            card.nameTextTrasform || nameTextTrasform
-          } !important;
-          font-style: ${card.nameFontStyle || nameFontStyle} !important;
-          color: ${cardTextColor} !important;
+          font-family: ${nameFontFamily};
+          font-size: ${nameFontSize};
+          font-weight: ${nameFontWeight};
+          letter-spacing: ${nameLetterSpacing}px;
+          line-height: ${nameLineHeight};
+          text-transform: ${nameTextTransform};
+          font-style: ${nameFontStyle};
+          color: ${textColor};
         }
 
         .profile-card-${index} .title {
-          font-family: ${card.titleFontFamily || titleFontFamily} !important;
-          font-size: ${card.titleFontSize || titleFontSize} !important;
-          font-weight: ${card.titleFontWeight || titleFontWeight} !important;
-          letter-spacing: ${
-            card.titleLetterSpacing || titleLetterSpacing
-          }px !important;
-          line-height: ${card.titleLineHeight || titleLineHeight} !important;
-          text-transform: ${
-            card.titleTextTrasform || titleTextTrasform
-          } !important;
-          font-style: ${card.titleFontStyle || titleFontStyle} !important;
+          font-family: ${titleFontFamily};
+          font-size: ${titleFontSize};
+          font-weight: ${titleFontWeight};
+          letter-spacing: ${titleLetterSpacing}px;
+          line-height: ${titleLineHeight};
+          text-transform: ${titleTextTransform};
+          font-style: ${titleFontStyle};
+          color: ${textColor};
         }
-        
+
         .profile-card-${index} .stat-label,
         .profile-card-${index} .bio,
         .profile-card-${index} .skill {
-          color: ${cardTextColor} !important;
+          color: ${textColor};
+        }
+
+        .profile-card-${index} .card-border {
+          background: ${cardBorderGradient} border-box;
+        }
+
+        .profile-card-${index} .avatar-border {
+          background: ${avatarBorderGradient} border-box;
+        }
+
+        .profile-card-${index} .stat-value {
+          background: ${textContentGradient} border-box;
         }
       `;
     })
     .join("\n");
 
-  console.log(cardStyles, "cardStyles from style ---");
-
   return (
     <style
       dangerouslySetInnerHTML={{
         __html: `
-          .card-border {
-            background: ${cardBorderGradient} border-box;
-            
-            border-radius: ${borderRadius.top} ${borderRadius.right} ${borderRadius.bottom} ${borderRadius.left};
-          }
-
-          .avatar-border {
-            background: ${avatarBorderGradient} border-box;
-          }
-
-          .stat-value {
-            background: ${textContentGradient} border-box;
-          }
-
-          ${cardStyles} /* Inject dynamically generated card styles */
+          ${cardStyles} /* Dynamically generated card styles */
         `,
       }}
     />
