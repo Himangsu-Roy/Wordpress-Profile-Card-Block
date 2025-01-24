@@ -78,8 +78,6 @@ const General = ({ attributes, setAttributes, selectedSkillIndex }) => {
         title={__("Cards", "b-blocks")}
         initialOpen={true}
       >
-      
-
         {cards.map((card, index) => {
           return (
             <PanelBody
@@ -326,7 +324,7 @@ const General = ({ attributes, setAttributes, selectedSkillIndex }) => {
               <InputControl
                 label={`${card.follow.text} Link`}
                 labelPosition="top"
-                value={card.follow.link} 
+                value={card.follow.link}
                 onChange={(newLink) => {
                   const newCards = [...cards];
                   newCards[index].follow.link = newLink;
@@ -379,8 +377,10 @@ const General = ({ attributes, setAttributes, selectedSkillIndex }) => {
       <Button
         variant="secondary"
         onClick={() => {
-          const newCards = [...cards, attributes];
-          setAttributes({ cards: newCards });
+          const newCard = {
+            ...cards[0],
+          };
+          setAttributes({ cards: [...cards, newCard] });
         }}
       >
         Add New Card

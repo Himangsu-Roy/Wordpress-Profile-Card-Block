@@ -207,7 +207,7 @@ const ProfileCard = ({
                     />
 
                     {/* Skills */}
-                    <div className="skills">
+                    {/* <div className="skills">
                       {card.skills.map((skill, index) => (
                         // <span
                         //   key={index}
@@ -231,7 +231,7 @@ const ProfileCard = ({
                           placeholder="Write Your Skills"
                         />
                       ))}
-                    </div>
+                    </div> */}
 
                     {/* Skills */}
                     <div className="skills">
