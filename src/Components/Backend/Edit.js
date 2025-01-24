@@ -23,7 +23,7 @@ const Edit = (props) => {
       <Settings {...{ attributes, setAttributes, selectedSkillIndex }} />
 
       <div {...useBlockProps()} id={id}>
-        <Style attributes={attributes} id={id} />
+        <Style setAttributes={setAttributes} attributes={attributes} id={id} />
 
         <ProfileCard
           setSelectedSkillIndex={setSelectedSkillIndex}

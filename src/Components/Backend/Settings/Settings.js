@@ -13,6 +13,8 @@ import Style from "./Style/Style";
 const Settings = ({ attributes, setAttributes, selectedSkillIndex }) => {
   const { alignment } = attributes;
 
+  console.log(alignment, "alignment for blocks");
+
   console.log(selectedSkillIndex, "selectedSkillIndex");
 
   return (

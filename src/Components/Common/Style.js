@@ -234,9 +234,18 @@
 
 // export default Style;
 
-const Style = ({ attributes }) => {
-  const { cards = [] } = attributes; // Only rely on the cards array
+import { useState } from "@wordpress/element";
 
+const Style = ({ attributes, setAttributes }) => {
+  const { cards = [], alignment } = attributes; // Only rely on the cards array
+  // const [align, setAlign] = useState(alignment);
+  if (alignment == "center") {
+    setAttributes({ alignment: "center" });
+  } else if (alignment == "right") {
+    setAttributes({ alignment: "right" });
+  } else {
+    setAttributes({ alignment: "left" });
+  }
   // Generate dynamic card-specific CSS
   const cardStyles = cards
     .map((card, index) => {
@@ -287,6 +296,10 @@ const Style = ({ attributes }) => {
       const cardBackground = cardBorderColor || rgbaColor;
 
       return `
+      .wp-block-b-blocks-profile-card{
+        display: flex;
+        justify-content: ${alignment};
+      }
         .profile-card-${index} {
           background: ${cardBackground};
           border-radius: ${borderRadius};
